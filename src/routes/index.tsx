@@ -32,9 +32,9 @@ import {
   X,
 } from "lucide-react";
 
-const TITLE = "CodeVault 21 — 21 Premium Source Code Projects for ₹199";
+const TITLE = "Vitcz Codes — CodeVault 21 Bundle: 21 Premium Source Codes for ₹199";
 const DESCRIPTION =
-  "CodeVault 21 is a curated bundle of 21 ready-to-use source-code projects covering SaaS, AI, eCommerce, POS, cloud storage and more. One-time payment of ₹199.";
+  "Get the CodeVault 21 bundle from Vitcz Codes — 21 ready-to-use source-code projects covering SaaS, AI, eCommerce, POS, cloud storage and more. One-time payment of ₹199.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -144,7 +144,7 @@ function LandingPage() {
             <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card">
               <Layers className="h-4 w-4 text-primary" />
             </span>
-            <span className="font-display text-sm font-bold tracking-tight">CodeVault 21</span>
+            <span className="font-display text-sm font-bold tracking-tight">Vitcz Codes</span>
           </div>
           <a
             href={RAZORPAY_PAYMENT_LINK}
@@ -154,7 +154,7 @@ function LandingPage() {
             }}
             className="rounded-lg border border-primary/40 px-3.5 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground sm:text-sm"
           >
-            Buy — {PRICE}
+            Get Now — {PRICE}
           </a>
         </div>
       </header>
@@ -169,18 +169,18 @@ function LandingPage() {
             </span>
             <h1 className="fade-up mt-6 text-[2.1rem] font-extrabold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
               21 Premium Source Codes.
-              <span className="mt-2 block gradient-text">One Complete Developer Bundle.</span>
+              <span className="mt-2 block gradient-text">Grab the Full Bundle Today.</span>
             </h1>
             <p className="fade-up mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
-              Get CodeVault 21 — a curated collection of ready-to-use source-code projects for
-              SaaS, AI, eCommerce, business tools, POS, cloud storage and more.
+              Hi there! 👋 CodeVault 21 is your friendly developer starter pack — 21 ready-to-use
+              source-code projects for SaaS, AI, eCommerce, POS, cloud storage and more. Download and start building in minutes.
             </p>
             <div className="fade-up mt-7 flex justify-center lg:justify-start">
               <CountdownTimer />
             </div>
             <div className="fade-up mt-6 flex flex-col items-center gap-3 lg:items-start">
               <BuyButton
-                label={`GET CODEVAULT 21 — ${PRICE}`}
+                label={`GET THE BUNDLE NOW — ${PRICE}`}
                 className="w-full max-w-sm px-6 py-4 text-[15px] lg:max-w-none lg:w-auto"
               />
               <p className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -476,7 +476,7 @@ function LandingPage() {
               <div className="mt-8 flex justify-center">
                 <CountdownTimer label="Offer resets in" />
               </div>
-              <BuyButton label={`BUY NOW — ${PRICE}`} className="mt-6 w-full px-6 py-4 text-base" />
+              <BuyButton label={`GET INSTANT ACCESS — ${PRICE}`} className="mt-6 w-full px-6 py-4 text-base" />
               <p className="mt-3 text-center text-xs text-muted-foreground">
                 Secure payment • Instant access after successful payment
               </p>
@@ -517,9 +517,9 @@ function LandingPage() {
       {/* FINAL CTA */}
       <section className="hero-glow border-t border-border">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:py-24">
-          <h2 className="text-3xl font-bold sm:text-4xl">Ready to Build Faster?</h2>
+          <h2 className="text-3xl font-bold sm:text-4xl">Ready to Start Building? 🚀</h2>
           <p className="mt-3 text-muted-foreground">
-            Get 21 source-code projects in one affordable bundle.
+            21 source-code projects, one friendly price, instant download. See you inside!
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
             <span className="font-display text-xl font-semibold text-muted-foreground line-through decoration-destructive/70 decoration-2">
@@ -527,7 +527,7 @@ function LandingPage() {
             </span>
             <span className="font-display text-4xl font-extrabold gradient-text">{PRICE} One-Time</span>
           </div>
-          <BuyButton label="GET CODEVAULT 21" className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
+          <BuyButton label={`DOWNLOAD THE BUNDLE — ${PRICE}`} className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
         </div>
       </section>
 
@@ -543,7 +543,7 @@ function LandingPage() {
 
       {/* Sticky mobile buy bar */}
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 p-3 backdrop-blur md:hidden">
-        <BuyButton label={`BUY NOW — ${PRICE}`} className="w-full px-6 py-3.5 text-sm" />
+        <BuyButton label={`GET NOW — ${PRICE}`} className="w-full px-6 py-3.5 text-sm" />
       </div>
     </div>
   );
