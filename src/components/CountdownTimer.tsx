@@ -1,33 +1,36 @@
 import { useEffect, useState } from "react";
 import { Timer } from "lucide-react";
 
-/** Milliseconds until the next midnight (local time). */
-function msUntilMidnight() {
-  const now = new Date();
-  const end = new Date(now);
-  end.setHours(24, 0, 0, 0);
-  return end.getTime() - now.getTime();
-}
+/** Timer length: 5 minutes in milliseconds. */
+const DURATION_MS = 5 * 60 * 1000;
 
 function parts(ms: number) {
-  const total = Math.max(0, Math.floor(ms / 1000));
+  const total = Math.max(0, Math.ceil(ms / 1000));
   return {
-    h: String(Math.floor(total / 3600)).padStart(2, "0"),
-    m: String(Math.floor((total % 3600) / 60)).padStart(2, "0"),
+    m: String(Math.floor(total / 60)).padStart(2, "0"),
     s: String(total % 60).padStart(2, "0"),
   };
 }
 
+/**
+ * 5-minute countdown. When it reaches zero it restarts,
+ * so the offer window is always visible.
+ */
 export function CountdownTimer({ label = "Today's bundle price ends in" }: { label?: string }) {
   const [ms, setMs] = useState<number | null>(null);
 
   useEffect(() => {
-    setMs(msUntilMidnight());
-    const id = setInterval(() => setMs(msUntilMidnight()), 1000);
+    setMs(DURATION_MS);
+    const id = setInterval(() => {
+      setMs((prev) => {
+        const next = (prev ?? DURATION_MS) - 1000;
+        return next <= 0 ? DURATION_MS : next;
+      });
+    }, 1000);
     return () => clearInterval(id);
   }, []);
 
-  const { h, m, s } = parts(ms ?? 0);
+  const { m, s } = parts(ms ?? 0);
 
   return (
     <div className="inline-flex flex-col items-center gap-2 rounded-2xl border border-primary/30 bg-primary/5 px-5 py-4">
@@ -37,7 +40,6 @@ export function CountdownTimer({ label = "Today's bundle price ends in" }: { lab
       </p>
       <div className="flex items-center gap-2" aria-live="off">
         {[
-          { v: h, l: "hrs" },
           { v: m, l: "min" },
           { v: s, l: "sec" },
         ].map((seg, i) => (
