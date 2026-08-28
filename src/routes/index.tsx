@@ -15,13 +15,20 @@ import { PRICE, PRODUCTS, RAZORPAY_PAYMENT_LINK, getDemoUrl } from "@/lib/codeva
 import {
   ArrowRight,
   Check,
+  Code2,
+  CreditCard,
+  Download,
   ExternalLink,
   Info,
   Layers,
   Lock,
+  Quote,
   ShieldCheck,
+  Sparkles,
   Terminal,
   Timer,
+  Users,
+  X,
 } from "lucide-react";
 
 const TITLE = "CodeVault 21 — 21 Premium Source Code Projects for ₹199";
