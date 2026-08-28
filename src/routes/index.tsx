@@ -148,6 +148,10 @@ function LandingPage() {
           </div>
           <a
             href={RAZORPAY_PAYMENT_LINK}
+            onClick={() => {
+              markCheckoutStarted();
+              fireMetaEvent("InitiateCheckout", { withValue: true });
+            }}
             className="rounded-lg border border-primary/40 px-3.5 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground sm:text-sm"
           >
             Buy — {PRICE}
