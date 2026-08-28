@@ -1,10 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fireMetaEvent } from "@/lib/meta-events";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Analytics } from "@/components/analytics";
-import { DOWNLOAD_BUNDLE_LINK, SUPPORT_EMAIL } from "@/lib/codevault";
-import { CheckCircle2, Download, HardDriveDownload, Info, LifeBuoy, Package } from "lucide-react";
+import { DOWNLOAD_BUNDLE_LINK, PRICE, RAZORPAY_PAYMENT_LINK, SUPPORT_EMAIL } from "@/lib/codevault";
+import { hasPurchaseAccess, markCheckoutStarted } from "@/lib/purchase-access";
+import {
+  CheckCircle2,
+  Download,
+  HardDriveDownload,
+  Info,
+  LifeBuoy,
+  Lock,
+  Package,
+} from "lucide-react";
 
 const TITLE = "Download CodeVault 21 — Order Confirmation";
 const DESCRIPTION =
@@ -28,10 +37,55 @@ export const Route = createFileRoute("/thank-you")({
 });
 
 function ThankYouPage() {
+  // "checking" until hydration decides — avoids flashing the download to
+  // visitors who just typed the URL.
+  const [access, setAccess] = useState<"checking" | "granted" | "denied">("checking");
+
   useEffect(() => {
+    const allowed = hasPurchaseAccess();
+    setAccess(allowed ? "granted" : "denied");
     fireMetaEvent("PageView");
-    fireMetaEvent("Purchase", { withValue: true });
+    if (allowed) {
+      fireMetaEvent("Purchase", { withValue: true, onceKey: "cv21_purchase_fired" });
+    }
   }, []);
+
+  if (access !== "granted") {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background px-4">
+        <Analytics />
+        <div className="surface-card w-full max-w-md p-8 text-center">
+          <Lock className="mx-auto h-8 w-8 text-primary" />
+          <h1 className="mt-5 font-display text-2xl font-bold tracking-tight">
+            {access === "checking" ? "Verifying your order…" : "Download locked"}
+          </h1>
+          {access === "denied" && (
+            <>
+              <p className="mt-3 text-sm text-muted-foreground">
+                This download page is only available after completing your CodeVault 21 purchase.
+                Complete the payment to unlock the bundle.
+              </p>
+              <a
+                href={RAZORPAY_PAYMENT_LINK}
+                onClick={() => markCheckoutStarted()}
+                className="cta-button mt-7 w-full px-6 py-3.5 text-sm"
+              >
+                GET CODEVAULT 21 — {PRICE}
+              </a>
+              <p className="mt-4 text-xs text-muted-foreground">
+                Already paid but seeing this? Email{" "}
+                <span className="font-mono text-foreground">{SUPPORT_EMAIL}</span> with your payment
+                ID.
+              </p>
+              <Link to="/" className="mt-5 inline-block text-xs text-primary hover:underline">
+                ← Back to CodeVault 21
+              </Link>
+            </>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
