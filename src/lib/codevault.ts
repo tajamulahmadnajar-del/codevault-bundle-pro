@@ -39,6 +39,8 @@ export type Product = {
    * the demo button stays hidden on the landing page automatically.
    */
   demoUrl: string;
+  /** Optional preview screenshot for the product card. */
+  image?: string;
 };
 
 /**
