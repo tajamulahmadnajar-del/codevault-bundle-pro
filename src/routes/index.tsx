@@ -446,7 +446,7 @@ function LandingPage() {
                 <span className="font-display text-6xl font-extrabold gradient-text">{PRICE}</span>
               </div>
               <p className="mt-2 text-sm font-medium text-primary">
-                Limited-time discount — save {ORIGINAL_PRICE.replace("₹", "₹") }
+                Limited-time discount — regular price {ORIGINAL_PRICE}
               </p>
               <p className="mt-1 text-sm text-muted-foreground">One-Time Payment</p>
             </div>
