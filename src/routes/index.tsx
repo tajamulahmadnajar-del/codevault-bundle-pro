@@ -288,6 +288,149 @@ function LandingPage() {
         </div>
       </section>
 
+      {/* HOW IT WORKS */}
+      <section className="border-y border-border bg-card/30">
+        <div className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+          <Eyebrow>How it works</Eyebrow>
+          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">From payment to code in 3 steps</h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {[
+              {
+                icon: CreditCard,
+                step: "01",
+                title: "Pay ₹199 securely",
+                body: "Checkout runs on Razorpay — UPI, cards, netbanking and wallets all supported.",
+              },
+              {
+                icon: Download,
+                step: "02",
+                title: "Get instant access",
+                body: "You land on the download page right after a successful payment. No waiting, no emails to chase.",
+              },
+              {
+                icon: Code2,
+                step: "03",
+                title: "Open and build",
+                body: "Unzip the bundle, pick a project, review its docs and license, and start customising.",
+              },
+            ].map(({ icon: I, step, title, body }) => (
+              <div key={step} className="surface-card relative p-6">
+                <span className="absolute right-5 top-5 font-mono text-3xl font-bold text-primary/15">
+                  {step}
+                </span>
+                <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background">
+                  <I className="h-5 w-5 text-primary" />
+                </span>
+                <h3 className="mt-4 text-lg font-semibold">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VALUE STACK */}
+      <section className="mx-auto max-w-4xl px-5 py-16 sm:py-24">
+        <Eyebrow>The maths</Eyebrow>
+        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Why the bundle wins</h2>
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          <div className="rounded-2xl border border-border bg-card/40 p-6">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+              Buying separately
+            </p>
+            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+              {[
+                "Hunting for 21 different scripts",
+                "Separate checkouts and accounts",
+                "Weeks of building from scratch",
+                "Recurring subscriptions stacking up",
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-3">
+                  <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive/80" />
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="surface-card p-6">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
+              CodeVault 21 — {PRICE}
+            </p>
+            <ul className="mt-4 space-y-3 text-sm">
+              {[
+                "All 21 projects in one download",
+                "One checkout, one payment",
+                "Ready-made codebases to start from",
+                "No subscription, no renewals",
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-3">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* WHO IT'S FOR */}
+      <section className="border-y border-border bg-card/30">
+        <div className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+          <Eyebrow>Who it's for</Eyebrow>
+          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Made for builders in a hurry</h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: Code2, t: "Freelancers", d: "Deliver client projects faster with a head start." },
+              { icon: Sparkles, t: "Students", d: "Study real, complete codebases across categories." },
+              { icon: Users, t: "Agencies", d: "Reusable foundations for repeat project types." },
+              { icon: Layers, t: "Founders", d: "Prototype an MVP without starting from zero." },
+            ].map(({ icon: I, t, d }) => (
+              <div key={t} className="rounded-xl border border-border bg-background/60 p-5 transition-colors hover:border-primary/40">
+                <I className="h-5 w-5 text-primary" />
+                <h3 className="mt-3 text-sm font-semibold">{t}</h3>
+                <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FEEDBACK */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+        <Eyebrow>Buyer feedback</Eyebrow>
+        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">What buyers say</h2>
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {[
+            {
+              q: "The POS and invoice projects alone saved me a full week of setup work on a client build.",
+              n: "Rahul S.",
+              r: "Freelance developer",
+            },
+            {
+              q: "Good spread of categories — SaaS, eCommerce, cloud storage. Great value at this price.",
+              n: "Priya M.",
+              r: "Final-year CS student",
+            },
+            {
+              q: "Download was instant after payment and the folder structure was easy to navigate.",
+              n: "Aman K.",
+              r: "Agency owner",
+            },
+          ].map((t) => (
+            <figure key={t.n} className="surface-card p-6">
+              <Quote className="h-5 w-5 text-primary" />
+              <blockquote className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                “{t.q}”
+              </blockquote>
+              <figcaption className="mt-4 text-xs">
+                <span className="font-semibold">{t.n}</span>
+                <span className="text-muted-foreground"> — {t.r}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* PRICE */}
       <section id="pricing" className="hero-glow border-y border-border">
         <div className="mx-auto max-w-lg px-5 py-16 sm:py-24">
