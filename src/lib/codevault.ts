@@ -3,7 +3,9 @@
  * Replace the placeholder values below when your links are ready.
  */
 export const RAZORPAY_PAYMENT_LINK = "RAZORPAY_PAYMENT_LINK_HERE";
-export const DOWNLOAD_BUNDLE_LINK = "DOWNLOAD_BUNDLE_LINK_HERE";
+/** Google Drive bundle download — shown on the thank-you page after payment. */
+export const DOWNLOAD_BUNDLE_LINK =
+  "https://drive.google.com/file/d/1p3oHMFE6ys8GwsS0iviRvBUYl6InwelH/view?usp=drivesdk";
 export const SUPPORT_EMAIL = "YOUR_SUPPORT_EMAIL";
 
 /** Analytics placeholders — fill these in to activate tracking. */

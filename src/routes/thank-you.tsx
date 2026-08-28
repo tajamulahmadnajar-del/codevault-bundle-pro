@@ -50,11 +50,19 @@ function ThankYouPage() {
             <p className="mt-1 text-sm text-muted-foreground">21 Premium Source Code Projects</p>
             <a
               href={DOWNLOAD_BUNDLE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="cta-button mt-8 w-full px-6 py-4 text-base"
             >
               <Download className="h-5 w-5" />
               DOWNLOAD CODEVAULT 21
             </a>
+            <p className="mt-3 text-xs text-muted-foreground">
+              If the button does not work, copy this link into your browser:
+            </p>
+            <p className="mt-1 break-all font-mono text-[11px] text-primary/80">
+              {DOWNLOAD_BUNDLE_LINK}
+            </p>
             <p className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
               <HardDriveDownload className="h-3.5 w-3.5" />
               Please save your downloaded files in a secure location.
