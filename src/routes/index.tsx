@@ -32,9 +32,9 @@ import {
   X,
 } from "lucide-react";
 
-const TITLE = "CodeVault 21 — 21 Premium Source Code Projects for ₹199";
+const TITLE = "Vitcz Codes — CodeVault 21 Bundle: 21 Premium Source Codes for ₹199";
 const DESCRIPTION =
-  "CodeVault 21 is a curated bundle of 21 ready-to-use source-code projects covering SaaS, AI, eCommerce, POS, cloud storage and more. One-time payment of ₹199.";
+  "Get the CodeVault 21 bundle from Vitcz Codes — 21 ready-to-use source-code projects covering SaaS, AI, eCommerce, POS, cloud storage and more. One-time payment of ₹199.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -144,7 +144,7 @@ function LandingPage() {
             <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card">
               <Layers className="h-4 w-4 text-primary" />
             </span>
-            <span className="font-display text-sm font-bold tracking-tight">CodeVault 21</span>
+            <span className="font-display text-sm font-bold tracking-tight">Vitcz Codes</span>
           </div>
           <a
             href={RAZORPAY_PAYMENT_LINK}
