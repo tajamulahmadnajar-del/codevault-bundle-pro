@@ -7,10 +7,11 @@ import {
 } from "@/components/ui/accordion";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Analytics } from "@/components/analytics";
-import { PRICE, PRODUCTS, RAZORPAY_PAYMENT_LINK } from "@/lib/codevault";
+import { PRICE, PRODUCTS, RAZORPAY_PAYMENT_LINK, getDemoUrl } from "@/lib/codevault";
 import {
   ArrowRight,
   Check,
+  ExternalLink,
   Info,
   Layers,
   Lock,
@@ -200,6 +201,12 @@ function LandingPage() {
           <p className="mt-3 text-muted-foreground">
             Every project included in the bundle, across development categories.
           </p>
+          {PRODUCTS.some((p) => getDemoUrl(p)) && (
+            <p className="mt-2 flex items-center gap-1.5 text-sm text-primary">
+              <ExternalLink className="h-3.5 w-3.5" />
+              Each card links to its live demo — explore before you buy.
+            </p>
+          )}
         </div>
         <ProductGrid />
       </section>
