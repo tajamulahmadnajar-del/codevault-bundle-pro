@@ -15,9 +15,17 @@ declare global {
  */
 export function fireMetaEvent(
   eventName: EventName,
-  opts: { withValue?: boolean } = {},
+  opts: { withValue?: boolean; onceKey?: string } = {},
 ): void {
   if (typeof window === "undefined") return;
+  if (opts.onceKey) {
+    try {
+      if (window.sessionStorage.getItem(opts.onceKey)) return;
+      window.sessionStorage.setItem(opts.onceKey, "1");
+    } catch {
+      /* storage unavailable */
+    }
+  }
   const eventId = crypto.randomUUID();
   const value = opts.withValue ? 199 : undefined;
 

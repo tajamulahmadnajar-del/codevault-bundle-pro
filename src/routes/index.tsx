@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { fireMetaEvent } from "@/lib/meta-events";
+import { markCheckoutStarted } from "@/lib/purchase-access";
 import {
   Accordion,
   AccordionContent,
@@ -110,7 +111,10 @@ function BuyButton({ label, className = "" }: { label: string; className?: strin
     <a
       href={RAZORPAY_PAYMENT_LINK}
       className={`cta-button ${className}`}
-      onClick={() => fireMetaEvent("InitiateCheckout", { withValue: true })}
+      onClick={() => {
+        markCheckoutStarted();
+        fireMetaEvent("InitiateCheckout", { withValue: true });
+      }}
     >
       {label}
       <ArrowRight className="h-4 w-4" />
