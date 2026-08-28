@@ -7,10 +7,11 @@ import {
 } from "@/components/ui/accordion";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Analytics } from "@/components/analytics";
-import { PRICE, PRODUCTS, RAZORPAY_PAYMENT_LINK } from "@/lib/codevault";
+import { PRICE, PRODUCTS, RAZORPAY_PAYMENT_LINK, getDemoUrl } from "@/lib/codevault";
 import {
   ArrowRight,
   Check,
+  ExternalLink,
   Info,
   Layers,
   Lock,
