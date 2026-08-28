@@ -30,8 +30,8 @@ export function PurchaseNotifications() {
     let count = 0;
 
     const show = () => {
-      const buyer = BUYERS[Math.floor(Math.random() * BUYERS.length)];
-      const time = TIMES[Math.min(count, TIMES.length - 1)];
+      const buyer = BUYERS[Math.floor(Math.random() * BUYERS.length)]!;
+      const time = TIMES[Math.min(count, TIMES.length - 1)]!;
       count += 1;
       setToast({ id: Date.now(), name: buyer.name, city: buyer.city, time });
       hideTimer = setTimeout(() => setToast(null), 4500);
