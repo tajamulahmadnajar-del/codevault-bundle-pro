@@ -5,8 +5,8 @@ import { GOOGLE_ANALYTICS_ID, META_PIXEL_ID } from "@/lib/codevault";
  * src/lib/codevault.ts with real IDs — the scripts activate automatically.
  */
 export function Analytics() {
-  const gaReady = GOOGLE_ANALYTICS_ID !== "GOOGLE_ANALYTICS_ID";
-  const pixelReady = META_PIXEL_ID !== "META_PIXEL_ID";
+  const gaReady = (GOOGLE_ANALYTICS_ID as string) !== "GOOGLE_ANALYTICS_ID";
+  const pixelReady = (META_PIXEL_ID as string) !== "META_PIXEL_ID";
 
   if (!gaReady && !pixelReady) return null;
 

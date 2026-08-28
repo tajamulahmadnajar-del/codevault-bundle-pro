@@ -6,10 +6,10 @@ export type MetaEventPayload = {
   eventName: MetaEventName;
   eventId: string;
   sourceUrl: string;
-  clientIp?: string;
-  userAgent?: string;
-  value?: number;
-  currency?: string;
+  clientIp?: string | undefined;
+  userAgent?: string | undefined;
+  value?: number | undefined;
+  currency?: string | undefined;
 };
 
 function sha256(input: string): string {
