@@ -124,6 +124,7 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">
       <Analytics />
+      <PurchaseNotifications />
 
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
@@ -207,7 +208,7 @@ function LandingPage() {
       {/* WHAT YOU GET */}
       <section className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
         <div className="mb-10 max-w-2xl">
-          <Eyebrow>What you get</Eyebrow>
+          <Eyebrow>Step 1 — What you get</Eyebrow>
           <h2 className="mt-3 text-3xl font-bold sm:text-4xl">21 Source Code Projects</h2>
           <p className="mt-3 text-muted-foreground">
             Every project included in the bundle, across development categories.
