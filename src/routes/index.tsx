@@ -476,7 +476,7 @@ function LandingPage() {
               <div className="mt-8 flex justify-center">
                 <CountdownTimer label="Offer resets in" />
               </div>
-              <BuyButton label={`BUY NOW — ${PRICE}`} className="mt-6 w-full px-6 py-4 text-base" />
+              <BuyButton label={`GET INSTANT ACCESS — ${PRICE}`} className="mt-6 w-full px-6 py-4 text-base" />
               <p className="mt-3 text-center text-xs text-muted-foreground">
                 Secure payment • Instant access after successful payment
               </p>
@@ -517,9 +517,9 @@ function LandingPage() {
       {/* FINAL CTA */}
       <section className="hero-glow border-t border-border">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:py-24">
-          <h2 className="text-3xl font-bold sm:text-4xl">Ready to Build Faster?</h2>
+          <h2 className="text-3xl font-bold sm:text-4xl">Ready to Start Building? 🚀</h2>
           <p className="mt-3 text-muted-foreground">
-            Get 21 source-code projects in one affordable bundle.
+            21 source-code projects, one friendly price, instant download. See you inside!
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
             <span className="font-display text-xl font-semibold text-muted-foreground line-through decoration-destructive/70 decoration-2">
@@ -527,7 +527,7 @@ function LandingPage() {
             </span>
             <span className="font-display text-4xl font-extrabold gradient-text">{PRICE} One-Time</span>
           </div>
-          <BuyButton label="GET CODEVAULT 21" className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
+          <BuyButton label={`DOWNLOAD THE BUNDLE — ${PRICE}`} className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
         </div>
       </section>
 
@@ -543,7 +543,7 @@ function LandingPage() {
 
       {/* Sticky mobile buy bar */}
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 p-3 backdrop-blur md:hidden">
-        <BuyButton label={`BUY NOW — ${PRICE}`} className="w-full px-6 py-3.5 text-sm" />
+        <BuyButton label={`GET NOW — ${PRICE}`} className="w-full px-6 py-3.5 text-sm" />
       </div>
     </div>
   );
