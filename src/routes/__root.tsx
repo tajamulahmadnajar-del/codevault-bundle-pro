@@ -77,13 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CodeVault 21 — 21 Premium Source Code Projects" },
+      { title: "Vitcz Codes — Premium Source Code Bundles" },
       {
         name: "description",
         content:
-          "CodeVault 21 — a curated bundle of 21 ready-to-use source-code projects for ₹199 one-time.",
+          "Vitcz Codes — premium, ready-to-use source-code projects and bundles for developers and founders.",
       },
-      { property: "og:site_name", content: "CodeVault 21" },
+      { property: "og:site_name", content: "Vitcz Codes" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -98,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
     ],
   }),
 
