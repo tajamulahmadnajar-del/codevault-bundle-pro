@@ -154,7 +154,7 @@ function LandingPage() {
             }}
             className="rounded-lg border border-primary/40 px-3.5 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground sm:text-sm"
           >
-            Buy — {PRICE}
+            Get Now — {PRICE}
           </a>
         </div>
       </header>
@@ -169,18 +169,18 @@ function LandingPage() {
             </span>
             <h1 className="fade-up mt-6 text-[2.1rem] font-extrabold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
               21 Premium Source Codes.
-              <span className="mt-2 block gradient-text">One Complete Developer Bundle.</span>
+              <span className="mt-2 block gradient-text">Grab the Full Bundle Today.</span>
             </h1>
             <p className="fade-up mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
-              Get CodeVault 21 — a curated collection of ready-to-use source-code projects for
-              SaaS, AI, eCommerce, business tools, POS, cloud storage and more.
+              Hi there! 👋 CodeVault 21 is your friendly developer starter pack — 21 ready-to-use
+              source-code projects for SaaS, AI, eCommerce, POS, cloud storage and more. Download and start building in minutes.
             </p>
             <div className="fade-up mt-7 flex justify-center lg:justify-start">
               <CountdownTimer />
             </div>
             <div className="fade-up mt-6 flex flex-col items-center gap-3 lg:items-start">
               <BuyButton
-                label={`GET CODEVAULT 21 — ${PRICE}`}
+                label={`GET THE BUNDLE NOW — ${PRICE}`}
                 className="w-full max-w-sm px-6 py-4 text-[15px] lg:max-w-none lg:w-auto"
               />
               <p className="flex items-center gap-2 text-xs text-muted-foreground">
