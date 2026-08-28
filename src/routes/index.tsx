@@ -11,7 +11,7 @@ import { ProductGrid } from "@/components/ProductGrid";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { PurchaseNotifications } from "@/components/PurchaseNotifications";
 import { Analytics } from "@/components/analytics";
-import { PRICE, PRODUCTS, RAZORPAY_PAYMENT_LINK, getDemoUrl } from "@/lib/codevault";
+import { ORIGINAL_PRICE, PRICE, PRODUCTS, RAZORPAY_PAYMENT_LINK, getDemoUrl } from "@/lib/codevault";
 import {
   ArrowRight,
   Check,
@@ -157,7 +157,7 @@ function LandingPage() {
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:py-24 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="text-center lg:text-left">
             <span className="fade-up inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.16em] text-primary">
-              One-time access — {PRICE}
+              One-time access — <s className="text-muted-foreground no-underline opacity-70 line-through">{ORIGINAL_PRICE}</s> {PRICE}
             </span>
             <h1 className="fade-up mt-6 text-[2.1rem] font-extrabold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
               21 Premium Source Codes.
@@ -439,8 +439,16 @@ function LandingPage() {
               <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
                 Step 4 — Get instant access
               </p>
-              <p className="mt-3 font-display text-6xl font-extrabold gradient-text">{PRICE}</p>
-              <p className="mt-2 text-sm text-muted-foreground">One-Time Payment</p>
+              <div className="mt-3 flex items-center justify-center gap-3">
+                <span className="font-display text-xl font-semibold text-muted-foreground line-through decoration-destructive/70 decoration-2">
+                  {ORIGINAL_PRICE}
+                </span>
+                <span className="font-display text-6xl font-extrabold gradient-text">{PRICE}</span>
+              </div>
+              <p className="mt-2 text-sm font-medium text-primary">
+                Limited-time discount — save {ORIGINAL_PRICE.replace("₹", "₹") }
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">One-Time Payment</p>
             </div>
             <div className="p-8">
               <ul className="space-y-3 text-sm">
@@ -505,9 +513,12 @@ function LandingPage() {
           <p className="mt-3 text-muted-foreground">
             Get 21 source-code projects in one affordable bundle.
           </p>
-          <p className="mt-6 font-display text-4xl font-extrabold gradient-text">
-            {PRICE} One-Time
-          </p>
+          <div className="mt-6 flex items-center justify-center gap-3">
+            <span className="font-display text-xl font-semibold text-muted-foreground line-through decoration-destructive/70 decoration-2">
+              {ORIGINAL_PRICE}
+            </span>
+            <span className="font-display text-4xl font-extrabold gradient-text">{PRICE} One-Time</span>
+          </div>
           <BuyButton label="GET CODEVAULT 21" className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
         </div>
       </section>
