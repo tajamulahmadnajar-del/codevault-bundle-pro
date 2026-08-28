@@ -16,29 +16,37 @@ export function ProductGrid() {
         return (
           <article
             key={p.id}
-            className="group relative flex flex-col bg-card p-5 transition-colors duration-200 hover:bg-secondary"
+            className="group relative flex h-full flex-col bg-card p-5 transition-colors duration-200 hover:bg-secondary"
           >
             <span className="absolute right-4 top-4 z-10 rounded bg-background/70 px-1.5 font-mono text-[11px] text-muted-foreground/70 backdrop-blur">
               {String(p.id).padStart(2, "0")}
             </span>
-            {p.image && (
-              <div className="mb-4 overflow-hidden rounded-lg border border-border bg-background">
+            <div className="mb-4 overflow-hidden rounded-lg border border-border bg-background">
+              {p.image ? (
                 <img
                   src={p.image}
                   alt={`${p.name} — ${p.category} source code preview`}
                   loading="lazy"
                   className="aspect-[16/9] w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
                 />
+              ) : (
+                <div className="flex aspect-[16/9] w-full items-center justify-center bg-gradient-to-br from-secondary to-muted">
+                  <Icon name={p.icon} />
+                </div>
+              )}
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border bg-background transition-colors group-hover:border-primary/50">
+                <Icon name={p.icon} />
+              </span>
+              <div className="min-w-0">
+                <h3 className="truncate text-[15px] font-semibold tracking-tight">{p.name}</h3>
+                <p className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-primary">
+                  {p.category}
+                </p>
               </div>
-            )}
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-background transition-colors group-hover:border-primary/50">
-              <Icon name={p.icon} />
-            </span>
-            <h3 className="mt-4 text-[15px] font-semibold tracking-tight">{p.name}</h3>
-            <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.14em] text-primary">
-              {p.category}
-            </p>
-            <p className="mt-2.5 text-[13px] leading-relaxed text-muted-foreground">
+            </div>
+            <p className="mt-3 flex-1 text-[13px] leading-relaxed text-muted-foreground">
               {p.description}
             </p>
             {demoUrl && (
