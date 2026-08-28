@@ -2,7 +2,7 @@
  * Central configuration for CodeVault 21.
  * Replace the placeholder values below when your links are ready.
  */
-export const RAZORPAY_PAYMENT_LINK = "RAZORPAY_PAYMENT_LINK_HERE";
+export const RAZORPAY_PAYMENT_LINK = "https://pages.razorpay.com/pl_TVCIwKJ4kXcTxU/view";
 /** Google Drive bundle download — shown on the thank-you page after payment. */
 export const DOWNLOAD_BUNDLE_LINK =
   "https://drive.google.com/file/d/1p3oHMFE6ys8GwsS0iviRvBUYl6InwelH/view?usp=drivesdk";
