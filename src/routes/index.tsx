@@ -167,7 +167,10 @@ function LandingPage() {
               Get CodeVault 21 — a curated collection of ready-to-use source-code projects for
               SaaS, AI, eCommerce, business tools, POS, cloud storage and more.
             </p>
-            <div className="fade-up mt-8 flex flex-col items-center gap-3 lg:items-start">
+            <div className="fade-up mt-7 flex justify-center lg:justify-start">
+              <CountdownTimer />
+            </div>
+            <div className="fade-up mt-6 flex flex-col items-center gap-3 lg:items-start">
               <BuyButton
                 label={`GET CODEVAULT 21 — ${PRICE}`}
                 className="w-full max-w-sm px-6 py-4 text-[15px] lg:max-w-none lg:w-auto"
