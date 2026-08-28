@@ -27,6 +27,8 @@ import viserbankImg from "@/assets/products/viserbank.jpg.asset.json";
 import fowticketsImg from "@/assets/products/fowtickets.jpg.asset.json";
 import bedriveImg from "@/assets/products/bedrive.jpg.asset.json";
 
+import readyrideImg from "@/assets/products/readyride.jpg.asset.json";
+import ecomusImg from "@/assets/products/ecomus.jpg.asset.json";
 import betlabImg from "@/assets/products/betlab.jpg.asset.json";
 import qrcode66Img from "@/assets/products/qrcode66.jpg.asset.json";
 import stockyImg from "@/assets/products/stocky.jpg.asset.json";
@@ -74,7 +76,7 @@ export const PRODUCTS: Product[] = [
   { id: 8, name: "66pusher", category: "Web Push Notifications", description: "Push notification campaigns and subscriber management.", icon: "BellRing", demoUrl: "DEMO_URL_HERE", image: pusher66Img.url },
   { id: 9, name: "Lozand", category: "HYIP / Trading", description: "Investment, forex, stock and crypto trading platform.", icon: "TrendingUp", demoUrl: "DEMO_URL_HERE", image: lozandImg.url },
   { id: 10, name: "Neorous", category: "SaaS / Digital Agency", description: "Modern SaaS and agency website codebase.", icon: "Layers", demoUrl: "DEMO_URL_HERE", image: neorousImg.url },
-  { id: 11, name: "Ecomus", category: "Fashion eCommerce", description: "Fashion storefront with cart and checkout flows.", icon: "ShoppingBag", demoUrl: "DEMO_URL_HERE" },
+  { id: 11, name: "Ecomus", category: "Fashion eCommerce", description: "Fashion storefront with cart and checkout flows.", icon: "ShoppingBag", demoUrl: "DEMO_URL_HERE", image: ecomusImg.url },
   { id: 12, name: "BeDrive", category: "File Sharing / Cloud Storage", description: "Cloud drive with sharing, folders and previews.", icon: "CloudUpload", demoUrl: "DEMO_URL_HERE", image: bedriveImg.url },
   { id: 13, name: "Fowtickets", category: "Support / Ticketing", description: "Helpdesk ticketing and knowledge base system.", icon: "LifeBuoy", demoUrl: "DEMO_URL_HERE", image: fowticketsImg.url },
   { id: 14, name: "ViserBank", category: "Digital Banking", description: "Online banking with accounts, transfers and ledgers.", icon: "Landmark", demoUrl: "DEMO_URL_HERE", image: viserbankImg.url },
