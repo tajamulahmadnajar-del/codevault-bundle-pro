@@ -5,8 +5,8 @@ import { GOOGLE_ANALYTICS_ID, META_PIXEL_ID } from "@/lib/codevault";
  * src/lib/codevault.ts with real IDs — the scripts activate automatically.
  */
 export function Analytics() {
-  const gaReady = GOOGLE_ANALYTICS_ID !== "GOOGLE_ANALYTICS_ID";
-  const pixelReady = META_PIXEL_ID !== "META_PIXEL_ID";
+  const gaReady = (GOOGLE_ANALYTICS_ID as string) !== "GOOGLE_ANALYTICS_ID";
+  const pixelReady = (META_PIXEL_ID as string) !== "META_PIXEL_ID";
 
   if (!gaReady && !pixelReady) return null;
 
@@ -23,11 +23,22 @@ export function Analytics() {
         </>
       )}
       {pixelReady && (
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`,
-          }}
-        />
+        <>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`,
+            }}
+          />
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              alt=""
+              src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+            />
+          </noscript>
+        </>
       )}
     </>
   );

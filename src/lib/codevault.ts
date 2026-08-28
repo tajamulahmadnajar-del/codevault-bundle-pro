@@ -9,7 +9,7 @@ export const DOWNLOAD_BUNDLE_LINK =
 export const SUPPORT_EMAIL = "YOUR_SUPPORT_EMAIL";
 
 /** Analytics placeholders — fill these in to activate tracking. */
-export const META_PIXEL_ID = "META_PIXEL_ID";
+export const META_PIXEL_ID = "2104861433763990";
 export const GOOGLE_ANALYTICS_ID = "GOOGLE_ANALYTICS_ID";
 
 export const PRICE = "₹199";
