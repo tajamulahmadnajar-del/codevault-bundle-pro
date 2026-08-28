@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ProductGrid } from "@/components/ProductGrid";
+import { PurchaseNotifications } from "@/components/PurchaseNotifications";
 import { Analytics } from "@/components/analytics";
 import { PRICE, PRODUCTS, RAZORPAY_PAYMENT_LINK, getDemoUrl } from "@/lib/codevault";
 import {
