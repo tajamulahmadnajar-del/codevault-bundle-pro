@@ -16,6 +16,17 @@ export const PRICE = "₹199";
 /** Original (crossed-out) price shown next to the discounted price. */
 export const ORIGINAL_PRICE = "₹3,999";
 
+import neorousImg from "@/assets/products/neorous.jpg.asset.json";
+import lozandImg from "@/assets/products/lozand.jpg.asset.json";
+import pusher66Img from "@/assets/products/pusher66.webp.asset.json";
+import invoixproImg from "@/assets/products/invoixpro.jpg.asset.json";
+import blancoImg from "@/assets/products/blanco.jpg.asset.json";
+import minelabImg from "@/assets/products/minelab.jpg.asset.json";
+import adsrockImg from "@/assets/products/adsrock.webp.asset.json";
+import viserbankImg from "@/assets/products/viserbank.jpg.asset.json";
+import fowticketsImg from "@/assets/products/fowtickets.jpg.asset.json";
+import bedriveImg from "@/assets/products/bedrive.jpg.asset.json";
+
 export type Product = {
   id: number;
   name: string;
