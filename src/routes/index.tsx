@@ -32,9 +32,9 @@ import {
   X,
 } from "lucide-react";
 
-const TITLE = "Vitcz Codes — CodeVault 21 Bundle: 21 Premium Source Codes for ₹199";
+const TITLE = "CodeVault 21 — 21 Premium Source Codes | Vitcz Codes";
 const DESCRIPTION =
-  "Get the CodeVault 21 bundle from Vitcz Codes — 21 ready-to-use source-code projects covering SaaS, AI, eCommerce, POS, cloud storage and more. One-time payment of ₹199.";
+  "Download 21 premium source-code projects — SaaS, AI, eCommerce, POS, banking & more. One-time ₹199. Instant access from Vitcz Codes.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,12 +44,10 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "product" },
-      { property: "og:url", content: "/" },
-      // OG image placeholder — replace with your absolute image URL when ready.
-      // { property: "og:image", content: "OG_IMAGE_URL_HERE" },
+      { property: "og:url", content: "https://21codes.vitcz.com/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://21codes.vitcz.com/" }],
     scripts: [
       {
         type: "application/ld+json",
