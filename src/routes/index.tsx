@@ -226,7 +226,7 @@ function LandingPage() {
       {/* VALUE */}
       <section className="border-y border-border bg-card/30">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
-          <Eyebrow>Inside the bundle</Eyebrow>
+          <Eyebrow>Step 2 — Inside the bundle</Eyebrow>
           <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
             Everything You Need to Start Building Faster
           </h2>
@@ -246,7 +246,7 @@ function LandingPage() {
 
       {/* WHY */}
       <section className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
-        <Eyebrow>Why CodeVault 21</Eyebrow>
+        <Eyebrow>Step 3 — Why CodeVault 21</Eyebrow>
         <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Built for people who ship</h2>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {[
@@ -283,7 +283,7 @@ function LandingPage() {
           <div className="surface-card overflow-hidden p-0">
             <div className="border-b border-border bg-secondary/40 px-8 py-6 text-center">
               <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                CodeVault 21
+                Step 4 — Get instant access
               </p>
               <p className="mt-3 font-display text-6xl font-extrabold gradient-text">{PRICE}</p>
               <p className="mt-2 text-sm text-muted-foreground">One-Time Payment</p>
