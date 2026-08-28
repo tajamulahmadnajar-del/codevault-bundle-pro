@@ -353,28 +353,15 @@ function LandingPage() {
         </div>
       </section>
 
-      <footer className="border-t border-border bg-card/30">
-        <div className="mx-auto max-w-6xl px-5 py-12">
-          <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
-            <div>
-              <div className="flex items-center gap-2">
-                <Layers className="h-5 w-5 text-primary" />
-                <span className="font-display font-bold">CodeVault 21</span>
-              </div>
-              <p className="mt-2 text-sm text-muted-foreground">21 Premium Source Code Projects</p>
-            </div>
-            <nav className="grid gap-2 text-sm text-muted-foreground sm:grid-cols-2 sm:gap-x-10">
-              <Link to="/privacy-policy" className="hover:text-primary">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-primary">Terms &amp; Conditions</Link>
-              <Link to="/refund-policy" className="hover:text-primary">Refund Policy</Link>
-              <Link to="/contact" className="hover:text-primary">Contact</Link>
-            </nav>
-          </div>
-          <p className="mt-8 border-t border-border pt-6 text-xs text-muted-foreground">
-            © {new Date().getFullYear()} CodeVault 21. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <div className="border-t border-border bg-card/20">
+        <nav className="mx-auto flex max-w-6xl flex-wrap justify-center gap-x-6 gap-y-2 px-5 py-6 text-xs text-muted-foreground">
+          <Link to="/privacy-policy" className="hover:text-primary">Privacy Policy</Link>
+          <Link to="/terms" className="hover:text-primary">Terms</Link>
+          <Link to="/refund-policy" className="hover:text-primary">Refund Policy</Link>
+          <Link to="/contact" className="hover:text-primary">Contact</Link>
+        </nav>
+      </div>
+
 
       {/* Sticky mobile buy bar */}
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 p-3 backdrop-blur md:hidden">
