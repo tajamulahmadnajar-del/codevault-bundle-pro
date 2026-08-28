@@ -18,9 +18,19 @@ export function ProductGrid() {
             key={p.id}
             className="group relative flex flex-col bg-card p-5 transition-colors duration-200 hover:bg-secondary"
           >
-            <span className="absolute right-4 top-4 font-mono text-[11px] text-muted-foreground/60">
+            <span className="absolute right-4 top-4 z-10 rounded bg-background/70 px-1.5 font-mono text-[11px] text-muted-foreground/70 backdrop-blur">
               {String(p.id).padStart(2, "0")}
             </span>
+            {p.image && (
+              <div className="mb-4 overflow-hidden rounded-lg border border-border bg-background">
+                <img
+                  src={p.image}
+                  alt={`${p.name} — ${p.category} source code preview`}
+                  loading="lazy"
+                  className="aspect-[16/9] w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
+                />
+              </div>
+            )}
             <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-background transition-colors group-hover:border-primary/50">
               <Icon name={p.icon} />
             </span>
