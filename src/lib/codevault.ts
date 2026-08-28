@@ -66,7 +66,7 @@ export function getDemoUrl(p: Product): string | null {
 }
 
 export const PRODUCTS: Product[] = [
-  { id: 1, name: "ReadyRide", category: "Ride Sharing / Taxi", description: "Ride booking and driver management app codebase.", icon: "Car", demoUrl: "DEMO_URL_HERE" },
+  { id: 1, name: "ReadyRide", category: "Ride Sharing / Taxi", description: "Ride booking and driver management app codebase.", icon: "Car", demoUrl: "DEMO_URL_HERE", image: readyrideImg.url },
   { id: 2, name: "RestroPRO SaaS", category: "Restaurant / POS", description: "Restaurant point-of-sale and order management system.", icon: "UtensilsCrossed", demoUrl: "DEMO_URL_HERE", image: restroproImg.url },
   { id: 3, name: "ChargePanda", category: "Digital Products / Subscriptions", description: "Sell digital downloads and manage subscriptions.", icon: "CreditCard", demoUrl: "DEMO_URL_HERE", image: chargepandaImg.url },
   { id: 4, name: "66biolinks", category: "Bio Links / URL Shortener", description: "Bio pages, short links, QR codes and web tools.", icon: "Link2", demoUrl: "DEMO_URL_HERE", image: biolinks66Img.url },
