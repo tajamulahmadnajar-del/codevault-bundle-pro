@@ -457,7 +457,10 @@ function LandingPage() {
                   </li>
                 ))}
               </ul>
-              <BuyButton label={`BUY NOW — ${PRICE}`} className="mt-8 w-full px-6 py-4 text-base" />
+              <div className="mt-8 flex justify-center">
+                <CountdownTimer label="Offer resets in" />
+              </div>
+              <BuyButton label={`BUY NOW — ${PRICE}`} className="mt-6 w-full px-6 py-4 text-base" />
               <p className="mt-3 text-center text-xs text-muted-foreground">
                 Secure payment • Instant access after successful payment
               </p>
