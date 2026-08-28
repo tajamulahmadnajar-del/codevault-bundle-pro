@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { fireMetaEvent } from "@/lib/meta-events";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Analytics } from "@/components/analytics";
 import { DOWNLOAD_BUNDLE_LINK, SUPPORT_EMAIL } from "@/lib/codevault";
@@ -26,6 +28,11 @@ export const Route = createFileRoute("/thank-you")({
 });
 
 function ThankYouPage() {
+  useEffect(() => {
+    fireMetaEvent("PageView");
+    fireMetaEvent("Purchase", { withValue: true });
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Analytics />

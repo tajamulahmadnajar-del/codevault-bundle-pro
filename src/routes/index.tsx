@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { fireMetaEvent } from "@/lib/meta-events";
 import {
   Accordion,
   AccordionContent,
@@ -96,7 +98,11 @@ const FAQS = [
 
 function BuyButton({ label, className = "" }: { label: string; className?: string }) {
   return (
-    <a href={RAZORPAY_PAYMENT_LINK} className={`cta-button ${className}`}>
+    <a
+      href={RAZORPAY_PAYMENT_LINK}
+      className={`cta-button ${className}`}
+      onClick={() => fireMetaEvent("InitiateCheckout", { withValue: true })}
+    >
       {label}
       <ArrowRight className="h-4 w-4" />
     </a>
@@ -110,6 +116,10 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 }
 
 function LandingPage() {
+  useEffect(() => {
+    fireMetaEvent("PageView");
+  }, []);
+
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">
       <Analytics />
