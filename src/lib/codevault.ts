@@ -13,8 +13,7 @@ export const META_PIXEL_ID = "2104861433763990";
 export const GOOGLE_ANALYTICS_ID = "GOOGLE_ANALYTICS_ID";
 
 export const PRICE = "₹199";
-/** Original (crossed-out) price shown next to the discounted price. */
-export const ORIGINAL_PRICE = "₹3,999";
+
 
 import neorousImg from "@/assets/products/neorous.jpg.asset.json";
 import lozandImg from "@/assets/products/lozand.jpg.asset.json";
