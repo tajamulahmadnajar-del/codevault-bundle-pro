@@ -466,9 +466,6 @@ function LandingPage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 flex justify-center">
-                <CountdownTimer label="Offer resets in" />
-              </div>
               <BuyButton label={`GET INSTANT ACCESS — ${PRICE}`} className="mt-6 w-full px-6 py-4 text-base" />
               <p className="mt-3 text-center text-xs text-muted-foreground">
                 Secure payment • Instant access after successful payment
@@ -561,9 +558,6 @@ function LandingPage() {
             21 source-code projects, one friendly price, instant download. See you inside!
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
-            <span className="font-display text-xl font-semibold text-muted-foreground line-through decoration-destructive/70 decoration-2">
-              {ORIGINAL_PRICE}
-            </span>
             <span className="font-display text-4xl font-extrabold gradient-text">{PRICE} One-Time</span>
           </div>
           <BuyButton label={`DOWNLOAD THE BUNDLE — ${PRICE}`} className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
