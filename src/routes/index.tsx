@@ -9,10 +9,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ProductGrid } from "@/components/ProductGrid";
-import { CountdownTimer } from "@/components/CountdownTimer";
 import { Analytics } from "@/components/analytics";
 import {
-  ORIGINAL_PRICE,
   PRICE,
   PRODUCTS,
   RAZORPAY_PAYMENT_LINK,
@@ -168,7 +166,7 @@ function LandingPage() {
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:py-24 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="text-center lg:text-left">
             <span className="fade-up inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.16em] text-primary">
-              One-time access — <s className="text-muted-foreground no-underline opacity-70 line-through">{ORIGINAL_PRICE}</s> {PRICE}
+              One-time payment — {PRICE}
             </span>
             <h1 className="fade-up mt-6 text-[2.1rem] font-extrabold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
               21 Premium Source Codes.
@@ -178,9 +176,6 @@ function LandingPage() {
               Hi there! 👋 CodeVault 21 is your friendly developer starter pack — 21 ready-to-use
               source-code projects for SaaS, AI, eCommerce, POS, cloud storage and more. Download and start building in minutes.
             </p>
-            <div className="fade-up mt-7 flex justify-center lg:justify-start">
-              <CountdownTimer />
-            </div>
             <div className="fade-up mt-6 flex flex-col items-center gap-3 lg:items-start">
               <BuyButton
                 label={`GET THE BUNDLE NOW — ${PRICE}`}
@@ -452,14 +447,8 @@ function LandingPage() {
                 Step 4 — Get instant access
               </p>
               <div className="mt-3 flex items-center justify-center gap-3">
-                <span className="font-display text-xl font-semibold text-muted-foreground line-through decoration-destructive/70 decoration-2">
-                  {ORIGINAL_PRICE}
-                </span>
                 <span className="font-display text-6xl font-extrabold gradient-text">{PRICE}</span>
               </div>
-              <p className="mt-2 text-sm font-medium text-primary">
-                Limited-time discount — regular price {ORIGINAL_PRICE}
-              </p>
               <p className="mt-1 text-sm text-muted-foreground">One-Time Payment</p>
             </div>
             <div className="p-8">
