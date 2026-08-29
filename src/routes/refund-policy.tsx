@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalPage } from "@/components/LegalPage";
+import { SUPPORT_EMAIL } from "@/lib/codevault";
 
 const TITLE = "Refund Policy — CodeVault 21";
 const DESCRIPTION =
