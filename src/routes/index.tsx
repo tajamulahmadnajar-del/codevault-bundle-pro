@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/accordion";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Analytics } from "@/components/analytics";
+import { CountdownTimer } from "@/components/CountdownTimer";
+import { PurchaseNotifications } from "@/components/PurchaseNotifications";
 import {
   PRICE,
   PRODUCTS,
@@ -165,9 +167,12 @@ function LandingPage() {
         <div className="grid-lines absolute inset-0 opacity-[0.16]" aria-hidden="true" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:py-24 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="text-center lg:text-left">
-            <span className="fade-up inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.16em] text-primary">
-              One-time payment — {PRICE}
-            </span>
+            <div className="fade-up flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.16em] text-primary">
+                One-time payment — {PRICE}
+              </span>
+              <CountdownTimer />
+            </div>
             <h1 className="fade-up mt-6 text-[2.1rem] font-extrabold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
               21 Premium Source Codes.
               <span className="mt-2 block gradient-text">Grab the Full Bundle Today.</span>
