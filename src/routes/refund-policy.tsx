@@ -29,6 +29,11 @@ export const Route = createFileRoute("/refund-policy")({
         and we will resolve the issue or issue a refund for the duplicate charge.
       </p>
       <p>Refund requests should be raised within 7 days of purchase with your payment reference.</p>
+      <p>
+        Refund and support requests: email{" "}
+        <span className="font-mono text-foreground">{SUPPORT_EMAIL}</span> and we will respond to
+        every customer email.
+      </p>
     </LegalPage>
   ),
 });

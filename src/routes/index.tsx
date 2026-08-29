@@ -11,7 +11,14 @@ import {
 import { ProductGrid } from "@/components/ProductGrid";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { Analytics } from "@/components/analytics";
-import { ORIGINAL_PRICE, PRICE, PRODUCTS, RAZORPAY_PAYMENT_LINK, getDemoUrl } from "@/lib/codevault";
+import {
+  ORIGINAL_PRICE,
+  PRICE,
+  PRODUCTS,
+  RAZORPAY_PAYMENT_LINK,
+  SUPPORT_EMAIL,
+  getDemoUrl,
+} from "@/lib/codevault";
 import {
   ArrowRight,
   Check,
@@ -22,7 +29,6 @@ import {
   Info,
   Layers,
   Lock,
-  Quote,
   ShieldCheck,
   Sparkles,
   Terminal,
