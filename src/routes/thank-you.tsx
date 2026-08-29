@@ -3,7 +3,14 @@ import { useEffect, useState } from "react";
 import { fireMetaEvent } from "@/lib/meta-events";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Analytics } from "@/components/analytics";
-import { DOWNLOAD_BUNDLE_LINK, PRICE, RAZORPAY_PAYMENT_LINK, SUPPORT_EMAIL } from "@/lib/codevault";
+import {
+  DOWNLOAD_BUNDLE_DIRECT_LINK,
+  DOWNLOAD_BUNDLE_LINK,
+  DOWNLOAD_PDF_LINK,
+  PRICE,
+  RAZORPAY_PAYMENT_LINK,
+  SUPPORT_EMAIL,
+} from "@/lib/codevault";
 import { hasPurchaseAccess, markCheckoutStarted } from "@/lib/purchase-access";
 import {
   CheckCircle2,
