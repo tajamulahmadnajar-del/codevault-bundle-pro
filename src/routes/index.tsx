@@ -10,9 +10,15 @@ import {
 } from "@/components/ui/accordion";
 import { ProductGrid } from "@/components/ProductGrid";
 import { CountdownTimer } from "@/components/CountdownTimer";
-import { PurchaseNotifications } from "@/components/PurchaseNotifications";
 import { Analytics } from "@/components/analytics";
-import { ORIGINAL_PRICE, PRICE, PRODUCTS, RAZORPAY_PAYMENT_LINK, getDemoUrl } from "@/lib/codevault";
+import {
+  ORIGINAL_PRICE,
+  PRICE,
+  PRODUCTS,
+  RAZORPAY_PAYMENT_LINK,
+  SUPPORT_EMAIL,
+  getDemoUrl,
+} from "@/lib/codevault";
 import {
   ArrowRight,
   Check,
@@ -23,7 +29,6 @@ import {
   Info,
   Layers,
   Lock,
-  Quote,
   ShieldCheck,
   Sparkles,
   Terminal,
@@ -134,7 +139,7 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">
       <Analytics />
-      <PurchaseNotifications />
+
 
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
@@ -401,38 +406,39 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* FEEDBACK */}
+      {/* WHAT'S INSIDE */}
       <section className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
-        <Eyebrow>Buyer feedback</Eyebrow>
-        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">What buyers say</h2>
+        <Eyebrow>What's inside</Eyebrow>
+        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">What every project typically includes</h2>
+        <p className="mt-3 max-w-2xl text-muted-foreground">
+          The exact contents can vary per project — each bundle folder includes the project files
+          and, where the original author provided them, documentation and setup notes.
+        </p>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {[
             {
-              q: "The POS and invoice projects alone saved me a full week of setup work on a client build.",
-              n: "Rahul S.",
-              r: "Freelance developer",
+              icon: Code2,
+              title: "Complete Source Files",
+              body: "Frontend, backend and configuration files for each project, ready to open in your editor.",
             },
             {
-              q: "Good spread of categories — SaaS, eCommerce, cloud storage. Great value at this price.",
-              n: "Priya M.",
-              r: "Final-year CS student",
+              icon: Layers,
+              title: "Real Business Features",
+              body: "Auth, dashboards, payments, admin panels and other modules that full applications need.",
             },
             {
-              q: "Download was instant after payment and the folder structure was easy to navigate.",
-              n: "Aman K.",
-              r: "Agency owner",
+              icon: Terminal,
+              title: "Docs Where Provided",
+              body: "Installation and usage notes included by the original authors for many projects.",
             },
-          ].map((t) => (
-            <figure key={t.n} className="surface-card p-6">
-              <Quote className="h-5 w-5 text-primary" />
-              <blockquote className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                “{t.q}”
-              </blockquote>
-              <figcaption className="mt-4 text-xs">
-                <span className="font-semibold">{t.n}</span>
-                <span className="text-muted-foreground"> — {t.r}</span>
-              </figcaption>
-            </figure>
+          ].map(({ icon: I, title, body }) => (
+            <div key={title} className="surface-card p-6">
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background">
+                <I className="h-5 w-5 text-primary" />
+              </span>
+              <h3 className="mt-4 text-lg font-semibold">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
+            </div>
           ))}
         </div>
       </section>
@@ -509,6 +515,52 @@ function LandingPage() {
             review the documentation and applicable license for each project before using,
             modifying, deploying, or redistributing any project.
           </p>
+        </div>
+      </section>
+
+      {/* DISCLAIMER */}
+      <section className="mx-auto max-w-4xl px-5 pb-16">
+        <div className="rounded-2xl border border-border bg-card/50 p-6 sm:p-8">
+          <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-primary">
+            <ShieldCheck className="h-4 w-4" />
+            Disclaimer
+          </p>
+          <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
+            <p>
+              <strong className="text-foreground">About this product:</strong> CodeVault 21 is a
+              digital product — a downloadable collection of 21 source-code projects sold by{" "}
+              <strong className="text-foreground">Vitcz Codes</strong>. It is provided for learning
+              and development purposes, &ldquo;as is&rdquo;, without any guarantee of specific
+              results, income or business outcomes.
+            </p>
+            <p>
+              <strong className="text-foreground">No earnings claims:</strong> Nothing on this page
+              is a promise of earnings. Any figures shown (such as pricing) refer to the product
+              price only. Your results depend entirely on your own skills and effort.
+            </p>
+            <p>
+              <strong className="text-foreground">Licensing:</strong> Each project may carry its own
+              license, dependencies and technical requirements. Review each project's
+              documentation and license terms before commercial use.
+            </p>
+            <p>
+              <strong className="text-foreground">Independent business:</strong> Vitcz Codes is an
+              independent seller and is not affiliated with, endorsed by, or sponsored by Meta,
+              Facebook, Instagram, Google, Razorpay or any other platform mentioned on this site.
+              Payments are processed securely by Razorpay.
+            </p>
+            <p>
+              <strong className="text-foreground">Contact us:</strong> Questions about the product,
+              your purchase or a refund? Email us any time at{" "}
+              <a
+                href={`mailto:${SUPPORT_EMAIL}`}
+                className="font-mono text-primary hover:underline"
+              >
+                {SUPPORT_EMAIL}
+              </a>{" "}
+              — we reply to every customer email.
+            </p>
+          </div>
         </div>
       </section>
 

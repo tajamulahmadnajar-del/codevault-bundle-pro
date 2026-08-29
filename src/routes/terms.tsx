@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalPage } from "@/components/LegalPage";
+import { SUPPORT_EMAIL } from "@/lib/codevault";
 
 const TITLE = "Terms & Conditions — CodeVault 21";
 const DESCRIPTION =
@@ -34,6 +35,16 @@ export const Route = createFileRoute("/terms")({
         Future updates are not part of this purchase unless explicitly stated.
       </p>
       <p>Sharing, reselling or redistributing the bundle itself is not permitted.</p>
+      <p>
+        <strong>Disclaimer:</strong> CodeVault 21 is provided &ldquo;as is&rdquo; for learning and
+        development purposes. No guarantee of specific results, income or business outcomes is
+        made. Vitcz Codes is an independent seller and is not affiliated with or endorsed by Meta,
+        Facebook, Instagram, Google, Razorpay or any other platform.
+      </p>
+      <p>
+        Questions about these terms? Contact us at{" "}
+        <span className="font-mono text-foreground">{SUPPORT_EMAIL}</span>.
+      </p>
     </LegalPage>
   ),
 });
