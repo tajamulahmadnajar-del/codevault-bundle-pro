@@ -564,14 +564,31 @@ function LandingPage() {
         </div>
       </section>
 
-      <div className="border-t border-border bg-card/20">
-        <nav className="mx-auto flex max-w-6xl flex-wrap justify-center gap-x-6 gap-y-2 px-5 py-6 text-xs text-muted-foreground">
+      <footer className="border-t border-border bg-card/20">
+        <nav className="mx-auto flex max-w-6xl flex-wrap justify-center gap-x-6 gap-y-2 px-5 pt-6 text-xs text-muted-foreground">
           <Link to="/privacy-policy" className="hover:text-primary">Privacy Policy</Link>
           <Link to="/terms" className="hover:text-primary">Terms</Link>
           <Link to="/refund-policy" className="hover:text-primary">Refund Policy</Link>
           <Link to="/contact" className="hover:text-primary">Contact</Link>
         </nav>
-      </div>
+        <div className="mx-auto max-w-4xl px-5 pb-8 pt-4 text-center">
+          <p className="text-[11px] leading-relaxed text-muted-foreground">
+            <strong className="text-foreground">Disclaimer:</strong> CodeVault 21 is developed,
+            owned and sold by the Vitcz Codes team. All source-code projects in this bundle are
+            provided for learning and development purposes &ldquo;as is&rdquo;. Vitcz Codes is an
+            independent seller and is <strong className="text-foreground">not affiliated with,
+            endorsed by, or sponsored by Meta, Facebook, Instagram, Google, Razorpay</strong> or
+            any other platform mentioned on this site. All trademarks belong to their respective
+            owners. Results are not guaranteed and depend entirely on your own skills and effort.
+          </p>
+          <p className="mt-3 font-mono text-[11px] text-muted-foreground/70">
+            &copy; {new Date().getFullYear()} Vitcz Codes &middot; All rights reserved &middot;{" "}
+            <a href={`mailto:${SUPPORT_EMAIL}`} className="hover:text-primary">
+              {SUPPORT_EMAIL}
+            </a>
+          </p>
+        </div>
+      </footer>
 
 
       {/* Sticky mobile buy bar */}
