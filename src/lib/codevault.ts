@@ -6,6 +6,11 @@ export const RAZORPAY_PAYMENT_LINK = "https://pages.razorpay.com/pl_TVCIwKJ4kXcT
 /** Google Drive bundle download — shown on the thank-you page after payment. */
 export const DOWNLOAD_BUNDLE_LINK =
   "https://drive.google.com/file/d/1p3oHMFE6ys8GwsS0iviRvBUYl6InwelH/view?usp=drivesdk";
+/** Direct-download version of the Drive link (skips the Drive preview page). */
+export const DOWNLOAD_BUNDLE_DIRECT_LINK =
+  "https://drive.google.com/uc?export=download&id=1p3oHMFE6ys8GwsS0iviRvBUYl6InwelH";
+/** Offline PDF instructions containing the download links. */
+export const DOWNLOAD_PDF_LINK = "/codevault-21-download.pdf";
 export const SUPPORT_EMAIL = "tajamulahmadnajar@gmail.com";
 
 /** Analytics placeholders — fill these in to activate tracking. */

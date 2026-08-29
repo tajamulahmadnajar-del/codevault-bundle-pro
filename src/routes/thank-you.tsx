@@ -3,11 +3,19 @@ import { useEffect, useState } from "react";
 import { fireMetaEvent } from "@/lib/meta-events";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Analytics } from "@/components/analytics";
-import { DOWNLOAD_BUNDLE_LINK, PRICE, RAZORPAY_PAYMENT_LINK, SUPPORT_EMAIL } from "@/lib/codevault";
+import {
+  DOWNLOAD_BUNDLE_DIRECT_LINK,
+  DOWNLOAD_BUNDLE_LINK,
+  DOWNLOAD_PDF_LINK,
+  PRICE,
+  RAZORPAY_PAYMENT_LINK,
+  SUPPORT_EMAIL,
+} from "@/lib/codevault";
 import { hasPurchaseAccess, markCheckoutStarted } from "@/lib/purchase-access";
 import {
   CheckCircle2,
   Download,
+  FileText,
   HardDriveDownload,
   Info,
   LifeBuoy,
@@ -110,7 +118,7 @@ function ThankYouPage() {
             <p className="mt-4 font-display text-xl font-bold tracking-tight">📦 CODEVAULT 21</p>
             <p className="mt-1 text-sm text-muted-foreground">21 Premium Source Code Projects</p>
             <a
-              href={DOWNLOAD_BUNDLE_LINK}
+              href={DOWNLOAD_BUNDLE_DIRECT_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="cta-button mt-8 w-full px-6 py-4 text-base"
@@ -118,8 +126,17 @@ function ThankYouPage() {
               <Download className="h-5 w-5" />
               DOWNLOAD CODEVAULT 21
             </a>
+            <a
+              href={DOWNLOAD_PDF_LINK}
+              download="CodeVault-21-Download.pdf"
+              className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-secondary/60 px-6 py-3 text-sm font-medium text-foreground transition hover:bg-secondary"
+            >
+              <FileText className="h-4 w-4 text-primary" />
+              Download Instructions (PDF)
+            </a>
             <p className="mt-3 text-xs text-muted-foreground">
-              If the button does not work, copy this link into your browser:
+              The PDF contains the direct download link — keep it saved offline. If the button does
+              not work, copy this link into your browser:
             </p>
             <p className="mt-1 break-all font-mono text-[11px] text-primary/80">
               {DOWNLOAD_BUNDLE_LINK}
