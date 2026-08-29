@@ -139,6 +139,8 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">
       <Analytics />
+      <PurchaseNotifications />
+
 
 
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
@@ -453,6 +455,9 @@ function LandingPage() {
               </p>
               <div className="mt-3 flex items-center justify-center gap-3">
                 <span className="font-display text-6xl font-extrabold gradient-text">{PRICE}</span>
+              </div>
+              <div className="mt-3 flex justify-center">
+                <CountdownTimer label="Price holds for" />
               </div>
               <p className="mt-1 text-sm text-muted-foreground">One-Time Payment</p>
             </div>
