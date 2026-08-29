@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/accordion";
 import { ProductGrid } from "@/components/ProductGrid";
 import { CountdownTimer } from "@/components/CountdownTimer";
-import { PurchaseNotifications } from "@/components/PurchaseNotifications";
 import { Analytics } from "@/components/analytics";
 import { ORIGINAL_PRICE, PRICE, PRODUCTS, RAZORPAY_PAYMENT_LINK, getDemoUrl } from "@/lib/codevault";
 import {
@@ -134,7 +133,7 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">
       <Analytics />
-      <PurchaseNotifications />
+
 
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">

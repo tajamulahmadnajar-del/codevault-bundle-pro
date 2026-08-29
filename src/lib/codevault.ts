@@ -6,7 +6,7 @@ export const RAZORPAY_PAYMENT_LINK = "https://pages.razorpay.com/pl_TVCIwKJ4kXcT
 /** Google Drive bundle download — shown on the thank-you page after payment. */
 export const DOWNLOAD_BUNDLE_LINK =
   "https://drive.google.com/file/d/1p3oHMFE6ys8GwsS0iviRvBUYl6InwelH/view?usp=drivesdk";
-export const SUPPORT_EMAIL = "YOUR_SUPPORT_EMAIL";
+export const SUPPORT_EMAIL = "tajamulahmadnajar@gmail.com";
 
 /** Analytics placeholders — fill these in to activate tracking. */
 export const META_PIXEL_ID = "2104861433763990";
