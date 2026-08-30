@@ -34,12 +34,28 @@ function hasRazorpayRedirectParams(): boolean {
 }
 
 /**
- * True only when the visitor actually came back from a completed payment
- * (Razorpay redirect params or ?paid=1). Used to fire the Purchase event —
- * merely opening the page after clicking Buy must NOT count as a purchase.
+ * Returns the real Razorpay payment id when the visitor actually came back
+ * from a completed payment. `?paid=1` alone grants page access but is NOT
+ * proof of payment, so it never reports a purchase.
  */
+export function getPaymentId(): string | null {
+  if (typeof window === "undefined") return null;
+  const params = new URLSearchParams(window.location.search);
+  return params.get("razorpay_payment_id") ?? params.get("razorpay_payment_link_id");
+}
+
+/** True only for a genuine, not-yet-reported Razorpay payment. */
 export function hasPaymentConfirmation(): boolean {
-  return hasRazorpayRedirectParams();
+  const id = getPaymentId();
+  if (!id) return false;
+  try {
+    const key = `cv21_purchase_reported_${id}`;
+    if (window.localStorage.getItem(key)) return false;
+    window.localStorage.setItem(key, "1");
+  } catch {
+    /* storage unavailable */
+  }
+  return true;
 }
 
 export function hasPurchaseAccess(): boolean {
