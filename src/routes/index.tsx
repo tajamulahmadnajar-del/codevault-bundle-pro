@@ -141,7 +141,6 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">
       <Analytics />
-      <PurchaseNotifications />
 
 
 
@@ -176,7 +175,6 @@ function LandingPage() {
               <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.16em] text-primary">
                 One-time payment — {PRICE}
               </span>
-              <CountdownTimer />
             </div>
             <h1 className="fade-up mt-6 text-[2.1rem] font-extrabold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
               21 Premium Source Codes.
@@ -458,9 +456,6 @@ function LandingPage() {
               </p>
               <div className="mt-3 flex items-center justify-center gap-3">
                 <span className="font-display text-6xl font-extrabold gradient-text">{PRICE}</span>
-              </div>
-              <div className="mt-3 flex justify-center">
-                <CountdownTimer label="Price holds for" />
               </div>
               <p className="mt-1 text-sm text-muted-foreground">One-Time Payment</p>
             </div>
