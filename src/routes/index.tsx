@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { fireMetaEvent } from "@/lib/meta-events";
+import { fireGaEvent } from "@/lib/ga";
 import { markCheckoutStarted } from "@/lib/purchase-access";
 import {
   Accordion,
@@ -117,6 +118,7 @@ function BuyButton({ label, className = "" }: { label: string; className?: strin
       onClick={() => {
         markCheckoutStarted();
         fireMetaEvent("InitiateCheckout", { withValue: true });
+        fireGaEvent("begin_checkout", { value: 199, currency: "INR" });
       }}
     >
       {label}
@@ -156,6 +158,7 @@ function LandingPage() {
             onClick={() => {
               markCheckoutStarted();
               fireMetaEvent("InitiateCheckout", { withValue: true });
+              fireGaEvent("begin_checkout", { value: 199, currency: "INR" });
             }}
             className="rounded-lg border border-primary/40 px-3.5 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground sm:text-sm"
           >
