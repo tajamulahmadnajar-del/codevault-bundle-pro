@@ -19,7 +19,12 @@ export const trackMetaEvent = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     await sendMetaCapiEvent({
       ...data,
-      clientIp: getRequestHeader("cf-connecting-ip") ?? getRequestHeader("x-forwarded-for") ?? undefined,
+      clientIp:
+        getRequestHeader("cf-connecting-ip") ??
+        getRequestHeader("true-client-ip") ??
+        getRequestHeader("x-real-ip") ??
+        getRequestHeader("x-forwarded-for")?.split(",")[0]?.trim() ??
+        undefined,
       userAgent: getRequestHeader("user-agent") ?? undefined,
     });
     return { ok: true };
