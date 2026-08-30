@@ -36,9 +36,9 @@ import {
   X,
 } from "lucide-react";
 
-const TITLE = "CodeVault 21 — 21 Premium Source Codes | Vitcz Codes";
+const TITLE = "CodeVault 21 — 21 Source Code Projects | Vitcz Codes";
 const DESCRIPTION =
-  "Download 21 premium source-code projects — SaaS, AI, eCommerce, POS, banking & more. One-time ₹199. Instant access from Vitcz Codes.";
+  "A downloadable collection of 21 source-code projects — SaaS, AI, eCommerce, POS, banking & more. One-time ₹199 from Vitcz Codes. For learning and development.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -174,13 +174,14 @@ function LandingPage() {
                 One-time payment — {PRICE}
               </span>
             </div>
-            <h1 className="fade-up mt-6 text-[2.1rem] font-extrabold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
-              21 Premium Source Codes.
-              <span className="mt-2 block gradient-text">Grab the Full Bundle Today.</span>
+              <h1 className="fade-up mt-6 text-[2.1rem] font-extrabold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
+              21 Source Code Projects.
+              <span className="mt-2 block gradient-text">One Downloadable Collection.</span>
             </h1>
             <p className="fade-up mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
-              Hi there! 👋 CodeVault 21 is your friendly developer starter pack — 21 ready-to-use
-              source-code projects for SaaS, AI, eCommerce, POS, cloud storage and more. Download and start building in minutes.
+              CodeVault 21 is a digital bundle of 21 source-code projects covering SaaS, eCommerce,
+              POS, cloud storage and more — made for developers and students who want real,
+              complete codebases to learn from and build on.
             </p>
             <div className="fade-up mt-6 flex flex-col items-center gap-3 lg:items-start">
               <BuyButton
