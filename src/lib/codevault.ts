@@ -15,7 +15,7 @@ export const SUPPORT_EMAIL = "tajamulahmadnajar@gmail.com";
 
 /** Analytics placeholders — fill these in to activate tracking. */
 export const META_PIXEL_ID = "2104861433763990";
-export const GOOGLE_ANALYTICS_ID = "GOOGLE_ANALYTICS_ID";
+export const GOOGLE_ANALYTICS_ID = "G-6D5BJBFZ6D";
 
 export const PRICE = "₹199";
 
