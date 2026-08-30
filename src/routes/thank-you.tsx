@@ -11,7 +11,11 @@ import {
   RAZORPAY_PAYMENT_LINK,
   SUPPORT_EMAIL,
 } from "@/lib/codevault";
-import { hasPurchaseAccess, markCheckoutStarted } from "@/lib/purchase-access";
+import {
+  hasPaymentConfirmation,
+  hasPurchaseAccess,
+  markCheckoutStarted,
+} from "@/lib/purchase-access";
 import {
   CheckCircle2,
   Download,
