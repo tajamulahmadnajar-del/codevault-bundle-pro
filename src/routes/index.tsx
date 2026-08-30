@@ -159,7 +159,7 @@ function LandingPage() {
             }}
             className="rounded-lg border border-primary/40 px-3.5 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground sm:text-sm"
           >
-            Get Now — {PRICE}
+            Get Access — {PRICE}
           </a>
         </div>
       </header>
@@ -185,7 +185,7 @@ function LandingPage() {
             </p>
             <div className="fade-up mt-6 flex flex-col items-center gap-3 lg:items-start">
               <BuyButton
-                label={`GET THE BUNDLE NOW — ${PRICE}`}
+                label={`Get the Bundle — ${PRICE}`}
                 className="w-full max-w-sm px-6 py-4 text-[15px] lg:max-w-none lg:w-auto"
               />
               <p className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -473,7 +473,7 @@ function LandingPage() {
                   </li>
                 ))}
               </ul>
-              <BuyButton label={`GET INSTANT ACCESS — ${PRICE}`} className="mt-6 w-full px-6 py-4 text-base" />
+              <BuyButton label={`Get Instant Access — ${PRICE}`} className="mt-6 w-full px-6 py-4 text-base" />
               <p className="mt-3 text-center text-xs text-muted-foreground">
                 Secure payment • Instant access after successful payment
               </p>
@@ -560,14 +560,14 @@ function LandingPage() {
       {/* FINAL CTA */}
       <section className="hero-glow border-t border-border">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:py-24">
-          <h2 className="text-3xl font-bold sm:text-4xl">Ready to Start Building? 🚀</h2>
+          <h2 className="text-3xl font-bold sm:text-4xl">Ready to Start Building?</h2>
           <p className="mt-3 text-muted-foreground">
-            21 source-code projects, one friendly price, instant download. See you inside!
+            21 source-code projects, one payment of {PRICE}, delivered as a download after checkout.
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
             <span className="font-display text-4xl font-extrabold gradient-text">{PRICE} One-Time</span>
           </div>
-          <BuyButton label={`DOWNLOAD THE BUNDLE — ${PRICE}`} className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
+          <BuyButton label={`Download the Bundle — ${PRICE}`} className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
         </div>
       </section>
 
@@ -600,7 +600,7 @@ function LandingPage() {
 
       {/* Sticky mobile buy bar */}
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 p-3 backdrop-blur md:hidden">
-        <BuyButton label={`GET NOW — ${PRICE}`} className="w-full px-6 py-3.5 text-sm" />
+        <BuyButton label={`Get the Bundle — ${PRICE}`} className="w-full px-6 py-3.5 text-sm" />
       </div>
     </div>
   );
