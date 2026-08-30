@@ -117,6 +117,7 @@ function BuyButton({ label, className = "" }: { label: string; className?: strin
       onClick={() => {
         markCheckoutStarted();
         fireMetaEvent("InitiateCheckout", { withValue: true });
+        fireGaEvent("begin_checkout", { value: 199, currency: "INR" });
       }}
     >
       {label}
