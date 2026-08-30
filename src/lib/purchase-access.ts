@@ -33,6 +33,15 @@ function hasRazorpayRedirectParams(): boolean {
   );
 }
 
+/**
+ * True only when the visitor actually came back from a completed payment
+ * (Razorpay redirect params or ?paid=1). Used to fire the Purchase event —
+ * merely opening the page after clicking Buy must NOT count as a purchase.
+ */
+export function hasPaymentConfirmation(): boolean {
+  return hasRazorpayRedirectParams();
+}
+
 export function hasPurchaseAccess(): boolean {
   if (typeof window === "undefined") return false;
   if (hasRazorpayRedirectParams()) {
