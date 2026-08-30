@@ -57,7 +57,9 @@ function ThankYouPage() {
     const allowed = hasPurchaseAccess();
     setAccess(allowed ? "granted" : "denied");
     fireMetaEvent("PageView");
-    if (allowed) {
+    // Purchase fires ONLY when Razorpay actually redirected back with payment
+    // params (or ?paid=1). Just re-opening this page must never count as a sale.
+    if (hasPaymentConfirmation()) {
       fireMetaEvent("Purchase", { withValue: true, onceKey: "cv21_purchase_fired" });
     }
   }, []);
