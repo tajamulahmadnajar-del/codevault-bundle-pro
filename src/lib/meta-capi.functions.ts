@@ -7,6 +7,8 @@ const eventSchema = z.object({
   eventName: z.enum(["PageView", "InitiateCheckout", "Purchase"]),
   eventId: z.string().min(1),
   sourceUrl: z.string().url(),
+  fbp: z.string().optional(),
+  fbc: z.string().optional(),
   value: z.number().optional(),
   currency: z.string().optional(),
 });
