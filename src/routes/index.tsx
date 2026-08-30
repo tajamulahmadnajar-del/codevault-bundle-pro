@@ -11,8 +11,6 @@ import {
 } from "@/components/ui/accordion";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Analytics } from "@/components/analytics";
-import { CountdownTimer } from "@/components/CountdownTimer";
-import { PurchaseNotifications } from "@/components/PurchaseNotifications";
 import {
   PRICE,
   PRODUCTS,
