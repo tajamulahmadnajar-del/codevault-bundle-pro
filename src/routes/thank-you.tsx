@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { fireMetaEvent } from "@/lib/meta-events";
+import { fireGaEvent, fireGaPurchase } from "@/lib/ga";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Analytics } from "@/components/analytics";
 import {
@@ -61,6 +62,14 @@ function ThankYouPage() {
     // params (or ?paid=1). Just re-opening this page must never count as a sale.
     if (hasPaymentConfirmation()) {
       fireMetaEvent("Purchase", { withValue: true, onceKey: "cv21_purchase_fired" });
+      // GA4 purchase event — activates the "purchase" event in Google Analytics.
+      const paymentId = getPaymentId();
+      // ?paid=1 alone grants access but is not proof of payment — never report
+      // a GA purchase without a real Razorpay payment/link id.
+      if (paymentId) {
+        fireGaPurchase(paymentId);
+      }
+      fireGaEvent("view_cart", { value: 199, currency: "INR" });
     }
   }, []);
 
