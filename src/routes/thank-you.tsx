@@ -15,6 +15,7 @@ import {
 import {
   hasPaymentConfirmation,
   hasPurchaseAccess,
+  getPaymentId,
   markCheckoutStarted,
 } from "@/lib/purchase-access";
 import {
@@ -90,7 +91,10 @@ function ThankYouPage() {
               </p>
               <a
                 href={RAZORPAY_PAYMENT_LINK}
-                onClick={() => markCheckoutStarted()}
+                onClick={() => {
+                  markCheckoutStarted();
+                  fireGaEvent("begin_checkout", { value: 199, currency: "INR" });
+                }}
                 className="cta-button mt-7 w-full px-6 py-3.5 text-sm"
               >
                 GET CODEVAULT 21 — {PRICE}
