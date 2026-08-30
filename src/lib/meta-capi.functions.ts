@@ -7,6 +7,8 @@ const eventSchema = z.object({
   eventName: z.enum(["PageView", "InitiateCheckout", "Purchase"]),
   eventId: z.string().min(1),
   sourceUrl: z.string().url(),
+  fbp: z.string().optional(),
+  fbc: z.string().optional(),
   value: z.number().optional(),
   currency: z.string().optional(),
 });
@@ -17,7 +19,12 @@ export const trackMetaEvent = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     await sendMetaCapiEvent({
       ...data,
-      clientIp: getRequestHeader("cf-connecting-ip") ?? getRequestHeader("x-forwarded-for") ?? undefined,
+      clientIp:
+        getRequestHeader("cf-connecting-ip") ??
+        getRequestHeader("true-client-ip") ??
+        getRequestHeader("x-real-ip") ??
+        getRequestHeader("x-forwarded-for")?.split(",")[0]?.trim() ??
+        undefined,
       userAgent: getRequestHeader("user-agent") ?? undefined,
     });
     return { ok: true };

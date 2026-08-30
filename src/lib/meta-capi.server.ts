@@ -8,6 +8,8 @@ export type MetaEventPayload = {
   sourceUrl: string;
   clientIp?: string | undefined;
   userAgent?: string | undefined;
+  fbp?: string | undefined;
+  fbc?: string | undefined;
   value?: number | undefined;
   currency?: string | undefined;
 };
@@ -25,6 +27,9 @@ export async function sendMetaCapiEvent(payload: MetaEventPayload): Promise<void
   const userData: Record<string, string> = {};
   if (payload.clientIp) userData["client_ip_address"] = payload.clientIp;
   if (payload.userAgent) userData["client_user_agent"] = payload.userAgent;
+  // Meta click/browser identifiers — needed for attribution & optimization.
+  if (payload.fbp) userData["fbp"] = payload.fbp;
+  if (payload.fbc) userData["fbc"] = payload.fbc;
 
   const body = {
     data: [
