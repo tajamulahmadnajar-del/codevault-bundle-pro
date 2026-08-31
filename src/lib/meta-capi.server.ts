@@ -19,10 +19,12 @@ function sha256(input: string): string {
 }
 
 /** Sends one event to the Meta Conversions API. Never throws — tracking must not break the app. */
-export async function sendMetaCapiEvent(payload: MetaEventPayload): Promise<void> {
+export async function sendMetaCapiEvent(
+  payload: MetaEventPayload,
+): Promise<{ sent: boolean; reason?: string; status?: number }> {
   const accessToken = process.env["META_CAPI_ACCESS_TOKEN"];
   const pixelId = process.env["META_PIXEL_ID"] ?? "2104861433763990";
-  if (!accessToken) return;
+  if (!accessToken) return { sent: false, reason: "missing_META_CAPI_ACCESS_TOKEN" };
 
   const userData: Record<string, string> = {};
   if (payload.clientIp) userData["client_ip_address"] = payload.clientIp;
@@ -48,15 +50,21 @@ export async function sendMetaCapiEvent(payload: MetaEventPayload): Promise<void
   };
 
   try {
-    await fetch(`https://graph.facebook.com/v21.0/${pixelId}/events?access_token=${accessToken}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    });
+    const res = await fetch(
+      `https://graph.facebook.com/v21.0/${pixelId}/events?access_token=${accessToken}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      },
+    );
+    return { sent: res.ok, status: res.status };
   } catch {
     // Tracking failures are intentionally silent.
+    return { sent: false, reason: "network_error" };
   }
 }
+
 
 // re-export to keep the functions file a thin wrapper without unused imports
 export { sha256 };
