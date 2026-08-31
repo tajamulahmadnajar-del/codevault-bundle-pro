@@ -17,7 +17,7 @@ const eventSchema = z.object({
 export const trackMetaEvent = createServerFn({ method: "POST" })
   .inputValidator((data) => eventSchema.parse(data))
   .handler(async ({ data }) => {
-    await sendMetaCapiEvent({
+    const result = await sendMetaCapiEvent({
       ...data,
       clientIp:
         getRequestHeader("cf-connecting-ip") ??
@@ -27,5 +27,5 @@ export const trackMetaEvent = createServerFn({ method: "POST" })
         undefined,
       userAgent: getRequestHeader("user-agent") ?? undefined,
     });
-    return { ok: true };
+    return { ok: true, ...result };
   });
