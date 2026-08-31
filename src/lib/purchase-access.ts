@@ -44,12 +44,28 @@ export function getPaymentId(): string | null {
   return params.get("razorpay_payment_id") ?? params.get("razorpay_payment_link_id");
 }
 
-/** True only for a genuine, not-yet-reported Razorpay payment. */
+/**
+ * True when the visitor arrived from a completed payment redirect.
+ * Uses the Razorpay payment id when available; falls back to `?paid=1`
+ * (Razorpay hosted pages do not always pass payment details back).
+ * De-duplicated so one payment is only reported once.
+ */
 export function hasPaymentConfirmation(): boolean {
-  const id = getPaymentId();
+  if (typeof window === "undefined") return false;
+  const params = new URLSearchParams(window.location.search);
+  const id = getPaymentId() ?? (params.get("paid") === "1" ? "paid_flag" : null);
   if (!id) return false;
   try {
-    const key = `cv21_purchase_reported_${id}`;
+    const key =
+      id === "paid_flag"
+        ? `cv21_purchase_reported_session_${window.sessionStorage.getItem("cv21_sid") ?? ""}`
+        : `cv21_purchase_reported_${id}`;
+    if (id === "paid_flag") {
+      // one purchase per browser session for the flag-only case
+      if (window.sessionStorage.getItem("cv21_purchase_flag_fired")) return false;
+      window.sessionStorage.setItem("cv21_purchase_flag_fired", "1");
+      return true;
+    }
     if (window.localStorage.getItem(key)) return false;
     window.localStorage.setItem(key, "1");
   } catch {
@@ -57,6 +73,7 @@ export function hasPaymentConfirmation(): boolean {
   }
   return true;
 }
+
 
 export function hasPurchaseAccess(): boolean {
   if (typeof window === "undefined") return false;
