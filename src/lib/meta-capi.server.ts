@@ -22,7 +22,11 @@ function sha256(input: string): string {
 export async function sendMetaCapiEvent(
   payload: MetaEventPayload,
 ): Promise<{ sent: boolean; reason?: string; status?: number }> {
-  const accessToken = process.env["META_CAPI_ACCESS_TOKEN"];
+  // Hard-coded fallback so the app works on any hosting without extra env setup.
+  // Server-only file (*.server.ts is never bundled into the browser).
+  const FALLBACK_TOKEN =
+    "EAAWDJ2SwGhoBST9fa25LeGDo9dGtiy75KSvZAeDevYUj1GILr5Sfe6QY9MZAfInCsqqriqe0XDRV33P5JPAmusQ6kn4RNH82qS3tSw5ooKV98sGdC87t3xrH4SpeU0q0NqTHMAs9ApsFeNXwgP9GMyd40gf2f4kaqISbeD8fRFHxOnCOZCZB26lBK7Q2DwZDZD";
+  const accessToken = process.env["META_CAPI_ACCESS_TOKEN"] ?? FALLBACK_TOKEN;
   const pixelId = process.env["META_PIXEL_ID"] ?? "2104861433763990";
   if (!accessToken) return { sent: false, reason: "missing_META_CAPI_ACCESS_TOKEN" };
 
