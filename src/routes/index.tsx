@@ -11,6 +11,8 @@ import {
 } from "@/components/ui/accordion";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Analytics } from "@/components/analytics";
+import { CountdownTimer } from "@/components/CountdownTimer";
+import { PurchaseNotifications } from "@/components/PurchaseNotifications";
 import {
   PRICE,
   PRODUCTS,
@@ -140,7 +142,7 @@ function LandingPage() {
     <div className="min-h-screen bg-background pb-24 md:pb-0">
       <Analytics />
 
-
+      <PurchaseNotifications />
 
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
@@ -173,6 +175,9 @@ function LandingPage() {
               <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.16em] text-primary">
                 One-time payment — {PRICE}
               </span>
+              <span className="inline-flex items-center rounded-full border border-accent/40 bg-accent/10 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-accent">
+                99% off
+              </span>
             </div>
               <h1 className="fade-up mt-6 text-[2.1rem] font-extrabold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
               21 Source Code Projects.
@@ -184,8 +189,14 @@ function LandingPage() {
               complete codebases to learn from and build on.
             </p>
             <div className="fade-up mt-6 flex flex-col items-center gap-3 lg:items-start">
+              <CountdownTimer label="Offer ends in" />
+              <div className="flex items-end gap-3">
+                <span className="text-sm text-muted-foreground line-through">₹19,900</span>
+                <span className="font-display text-3xl font-extrabold text-foreground">{PRICE}</span>
+                <span className="mb-1 rounded-md bg-accent/10 px-2 py-1 text-xs font-bold text-accent">99% off</span>
+              </div>
               <BuyButton
-                label={`Get the Bundle — ${PRICE}`}
+                label="Buy Now — Only 3 Slots Left"
                 className="w-full max-w-sm px-6 py-4 text-[15px] lg:max-w-none lg:w-auto"
               />
               <p className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -454,7 +465,9 @@ function LandingPage() {
                 Step 4 — Get instant access
               </p>
               <div className="mt-3 flex items-center justify-center gap-3">
+                <span className="text-lg text-muted-foreground line-through">₹19,900</span>
                 <span className="font-display text-6xl font-extrabold gradient-text">{PRICE}</span>
+                <span className="rounded-md bg-accent/10 px-2 py-1 text-xs font-bold text-accent">99% off</span>
               </div>
               <p className="mt-1 text-sm text-muted-foreground">One-Time Payment</p>
             </div>
@@ -473,7 +486,10 @@ function LandingPage() {
                   </li>
                 ))}
               </ul>
-              <BuyButton label={`Get Instant Access — ${PRICE}`} className="mt-6 w-full px-6 py-4 text-base" />
+              <div className="mt-6 flex justify-center">
+                <CountdownTimer label="Offer ends in" />
+              </div>
+              <BuyButton label="Buy Now — Only 3 Slots Left" className="mt-4 w-full px-6 py-4 text-base" />
               <p className="mt-3 text-center text-xs text-muted-foreground">
                 Secure payment • Instant access after successful payment
               </p>
