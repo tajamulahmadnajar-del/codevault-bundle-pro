@@ -38,9 +38,9 @@ import {
   X,
 } from "lucide-react";
 
-const TITLE = "CodeVault 21 — 21 Source Code Projects | Vitcz Codes";
+const TITLE = "CodeVault 21 — 21 Premium Source Codes Worth ₹20,000+ for ₹199";
 const DESCRIPTION =
-  "A downloadable collection of 21 source-code projects — SaaS, AI, eCommerce, POS, banking & more. One-time ₹199 from Vitcz Codes. For learning and development.";
+  "21 premium source-code projects — SaaS, AI, eCommerce, POS, banking & more. Worth ₹20,000+, one-time payment of just ₹199. Instant download from Vitcz Codes.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -179,19 +179,19 @@ function LandingPage() {
                 99% off
               </span>
             </div>
-              <h1 className="fade-up mt-6 text-[2.1rem] font-extrabold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
-              21 Source Code Projects.
-              <span className="mt-2 block gradient-text">One Downloadable Collection.</span>
+            <h1 className="fade-up mt-6 text-[2.1rem] font-extrabold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
+              21 Premium Source Codes.
+              <span className="mt-2 block gradient-text">Worth ₹20,000+ — Yours for Just ₹199.</span>
             </h1>
             <p className="fade-up mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
-              CodeVault 21 is a digital bundle of 21 source-code projects covering SaaS, eCommerce,
-              POS, cloud storage and more — made for developers and students who want real,
-              complete codebases to learn from and build on.
+              One bundle. 21 complete, ready-to-use codebases — SaaS, AI, eCommerce, POS, banking,
+              booking and more. Buy them separately and it costs over ₹20,000. Today you pay ₹199
+              once and download everything instantly.
             </p>
             <div className="fade-up mt-6 flex flex-col items-center gap-3 lg:items-start">
               <CountdownTimer label="Offer ends in" />
               <div className="flex items-end gap-3">
-                <span className="text-sm text-muted-foreground line-through">₹19,900</span>
+                <span className="text-sm text-muted-foreground line-through">₹20,000</span>
                 <span className="font-display text-3xl font-extrabold text-foreground">{PRICE}</span>
                 <span className="mb-1 rounded-md bg-accent/10 px-2 py-1 text-xs font-bold text-accent">99% off</span>
               </div>
@@ -244,9 +244,12 @@ function LandingPage() {
       <section className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
         <div className="mb-10 max-w-2xl">
           <Eyebrow>Step 1 — What you get</Eyebrow>
-          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">21 Source Code Projects</h2>
+          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+            21 Premium Source Codes — Worth ₹20,000+
+          </h2>
           <p className="mt-3 text-muted-foreground">
-            Every project included in the bundle, across development categories.
+            Every project included in the bundle, across 10+ development categories. Each one
+            would cost ₹1,000+ on its own — you get all 21 for a single ₹199 payment.
           </p>
           {PRODUCTS.some((p) => getDemoUrl(p)) && (
             <p className="mt-2 flex items-center gap-1.5 text-sm text-primary">
@@ -356,7 +359,9 @@ function LandingPage() {
       {/* VALUE STACK */}
       <section className="mx-auto max-w-4xl px-5 py-16 sm:py-24">
         <Eyebrow>The maths</Eyebrow>
-        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Why the bundle wins</h2>
+        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+          ₹20,000+ Worth of Code. Just ₹199 Today.
+        </h2>
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           <div className="rounded-2xl border border-border bg-card/40 p-6">
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
@@ -465,11 +470,11 @@ function LandingPage() {
                 Step 4 — Get instant access
               </p>
               <div className="mt-3 flex items-center justify-center gap-3">
-                <span className="text-lg text-muted-foreground line-through">₹19,900</span>
+                <span className="text-lg text-muted-foreground line-through">₹20,000</span>
                 <span className="font-display text-6xl font-extrabold gradient-text">{PRICE}</span>
                 <span className="rounded-md bg-accent/10 px-2 py-1 text-xs font-bold text-accent">99% off</span>
               </div>
-              <p className="mt-1 text-sm text-muted-foreground">One-Time Payment</p>
+              <p className="mt-1 text-sm text-muted-foreground">One-Time Payment — No Hidden Charges</p>
             </div>
             <div className="p-8">
               <ul className="space-y-3 text-sm">
@@ -576,14 +581,16 @@ function LandingPage() {
       {/* FINAL CTA */}
       <section className="hero-glow border-t border-border">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:py-24">
-          <h2 className="text-3xl font-bold sm:text-4xl">Ready to Start Building?</h2>
+          <h2 className="text-3xl font-bold sm:text-4xl">₹20,000+ Worth of Code for ₹199</h2>
           <p className="mt-3 text-muted-foreground">
-            21 source-code projects, one payment of {PRICE}, delivered as a download after checkout.
+            21 premium source-code projects, one payment of {PRICE}, delivered as an instant
+            download after checkout.
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
+            <span className="text-lg text-muted-foreground line-through">₹20,000</span>
             <span className="font-display text-4xl font-extrabold gradient-text">{PRICE} One-Time</span>
           </div>
-          <BuyButton label={`Download the Bundle — ${PRICE}`} className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
+          <BuyButton label={`Download All 21 Projects — ${PRICE}`} className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
         </div>
       </section>
 
