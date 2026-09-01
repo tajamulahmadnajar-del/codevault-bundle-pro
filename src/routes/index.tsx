@@ -38,9 +38,9 @@ import {
   X,
 } from "lucide-react";
 
-const TITLE = "CodeVault 21 — 21 Source Code Projects | Vitcz Codes";
+const TITLE = "CodeVault 21 — 21 Premium Source Codes Worth ₹20,000+ for ₹199";
 const DESCRIPTION =
-  "A downloadable collection of 21 source-code projects — SaaS, AI, eCommerce, POS, banking & more. One-time ₹199 from Vitcz Codes. For learning and development.";
+  "21 premium source-code projects — SaaS, AI, eCommerce, POS, banking & more. Worth ₹20,000+, one-time payment of just ₹199. Instant download from Vitcz Codes.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
