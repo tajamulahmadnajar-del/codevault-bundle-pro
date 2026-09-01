@@ -40,7 +40,7 @@ function getFbc(): string | undefined {
 
 export function fireMetaEvent(
   eventName: EventName,
-  opts: { withValue?: boolean; onceKey?: string } = {},
+  opts: { withValue?: boolean; valueInr?: number; onceKey?: string } = {},
 ): void {
   if (typeof window === "undefined") return;
   if (opts.onceKey) {
@@ -52,7 +52,7 @@ export function fireMetaEvent(
     }
   }
   const eventId = crypto.randomUUID();
-  const value = opts.withValue ? 199 : undefined;
+  const value = opts.withValue ? (opts.valueInr ?? 199) : undefined;
   const fbp = readCookie("_fbp");
   const fbc = getFbc();
 
