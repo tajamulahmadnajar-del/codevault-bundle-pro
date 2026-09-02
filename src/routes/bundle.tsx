@@ -78,7 +78,7 @@ type BundleProduct = {
   description: string;
   features: string[];
   icon: React.ComponentType<{ className?: string }>;
-  image?: string;
+  image: string | undefined;
   demoUrl: string | null;
 };
 
