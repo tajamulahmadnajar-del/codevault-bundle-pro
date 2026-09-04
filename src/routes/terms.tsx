@@ -22,8 +22,8 @@ export const Route = createFileRoute("/terms")({
   component: () => (
     <LegalPage title="Terms & Conditions">
       <p>
-        CodeVault 21 is a digital bundle of 21 source-code projects delivered as downloadable
-        files after a successful one-time payment of ₹199.
+        CodeVault 21 is a digital bundle of 23 source-code projects delivered as downloadable
+        files after a successful one-time payment of ₹1,499.
       </p>
       <p>
         Each project may carry its own license, dependencies and technical requirements. You are

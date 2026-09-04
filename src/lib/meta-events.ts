@@ -52,7 +52,7 @@ export function fireMetaEvent(
     }
   }
   const eventId = crypto.randomUUID();
-  const value = opts.withValue ? (opts.valueInr ?? 199) : undefined;
+  const value = opts.withValue ? (opts.valueInr ?? 1499) : undefined;
   const fbp = readCookie("_fbp");
   const fbc = getFbc();
 
@@ -77,4 +77,4 @@ export function fireMetaEvent(
   }).catch(() => {});
 }
 
-export const PRICE_VALUE_INR = Number(PRICE.replace(/[^\d.]/g, "")) || 199;
+export const PRICE_VALUE_INR = Number(PRICE.replace(/[^\d.]/g, "")) || 1499;

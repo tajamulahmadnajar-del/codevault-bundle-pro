@@ -67,7 +67,7 @@ function ThankYouPage() {
       // generated transaction id so the purchase is still counted.
       const paymentId = getPaymentId() ?? `cv21_${Date.now()}`;
       fireGaPurchase(paymentId);
-      fireGaEvent("view_cart", { value: 199, currency: "INR" });
+      fireGaEvent("view_cart", { value: 1499, currency: "INR" });
     }
 
   }, []);
@@ -91,7 +91,7 @@ function ThankYouPage() {
                 href={RAZORPAY_PAYMENT_LINK}
                 onClick={() => {
                   markCheckoutStarted();
-                  fireGaEvent("begin_checkout", { value: 199, currency: "INR" });
+                  fireGaEvent("begin_checkout", { value: 1499, currency: "INR" });
                 }}
                 className="cta-button mt-7 w-full px-6 py-3.5 text-sm"
               >
@@ -133,7 +133,7 @@ function ThankYouPage() {
           <div className="fade-up surface-card mx-auto mt-10 max-w-md p-8">
             <Package className="mx-auto h-8 w-8 text-primary" />
             <p className="mt-4 font-display text-xl font-bold tracking-tight">📦 CODEVAULT 21</p>
-            <p className="mt-1 text-sm text-muted-foreground">21 Premium Source Code Projects</p>
+            <p className="mt-1 text-sm text-muted-foreground">23 Premium Source Code Projects</p>
             <a
               href={DOWNLOAD_BUNDLE_DIRECT_LINK}
               target="_blank"

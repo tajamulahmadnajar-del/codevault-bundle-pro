@@ -17,6 +17,8 @@ import { PurchaseNotifications } from "@/components/PurchaseNotifications";
 import {
   PRICE,
   PRODUCTS,
+  PRODUCT_GROUPS,
+
   RAZORPAY_PAYMENT_LINK,
   SUPPORT_EMAIL,
   getDemoUrl,
@@ -39,9 +41,9 @@ import {
   X,
 } from "lucide-react";
 
-const TITLE = "CodeVault 21 — 21 Premium Source Codes Worth ₹20,000+ for ₹199";
+const TITLE = "CodeVault 21 — 23 Premium Source Codes for ₹1,499 (97% Off)";
 const DESCRIPTION =
-  "21 premium source-code projects — SaaS, AI, eCommerce, POS, banking & more. Worth ₹20,000+, one-time payment of just ₹199. Instant download from Vitcz Codes.";
+  "23 premium source-code projects — SaaS, AI, eCommerce, POS, banking & more. ₹2,499 each, now ₹74.97 per source code. Pay ₹1,499 once and download instantly from Vitcz Codes.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -65,7 +67,7 @@ export const Route = createFileRoute("/")({
           description: DESCRIPTION,
           offers: {
             "@type": "Offer",
-            price: "199",
+            price: "1499",
             priceCurrency: "INR",
             availability: "https://schema.org/InStock",
           },
@@ -77,7 +79,7 @@ export const Route = createFileRoute("/")({
 });
 
 const VALUE_ITEMS = [
-  "21 Development Projects",
+  "23 Development Projects (20 + 3 bonus)",
   "Multiple Business Categories",
   "SaaS & Web Applications",
   "AI & Automation Projects",
@@ -90,7 +92,7 @@ const VALUE_ITEMS = [
 const FAQS = [
   {
     q: "What do I get after purchasing?",
-    a: "You receive access to the CodeVault 21 download package containing the 21 listed projects.",
+    a: "You receive access to the CodeVault 21 download package containing the 20 listed projects plus 3 bonus source codes.",
   },
   { q: "Is this a monthly subscription?", a: "No. The listed price is a one-time payment." },
   {
@@ -119,7 +121,7 @@ function BuyButton({ label, className = "" }: { label: string; className?: strin
       onClick={() => {
         markCheckoutStarted();
         fireMetaEvent("InitiateCheckout", { withValue: true });
-        fireGaEvent("begin_checkout", { value: 199, currency: "INR" });
+        fireGaEvent("begin_checkout", { value: 1499, currency: "INR" });
       }}
     >
       {label}
@@ -158,7 +160,7 @@ function LandingPage() {
             onClick={() => {
               markCheckoutStarted();
               fireMetaEvent("InitiateCheckout", { withValue: true });
-              fireGaEvent("begin_checkout", { value: 199, currency: "INR" });
+              fireGaEvent("begin_checkout", { value: 1499, currency: "INR" });
             }}
             className="rounded-lg border border-primary/40 px-3.5 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground sm:text-sm"
           >
@@ -177,24 +179,25 @@ function LandingPage() {
                 One-time payment — {PRICE}
               </span>
               <span className="inline-flex items-center rounded-full border border-accent/40 bg-accent/10 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-accent">
-                99% off
+                97% off
               </span>
             </div>
             <h1 className="fade-up mt-6 text-[2.1rem] font-extrabold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
-              21 Premium Source Codes.
-              <span className="mt-2 block gradient-text">Worth ₹20,000+ — Yours for Just ₹199.</span>
+              20 Premium Source Codes + 3 Free Bonus.
+              <span className="mt-2 block gradient-text">₹2,499 Each — Now Just ₹74.97 Per Source Code.</span>
             </h1>
             <p className="fade-up mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
-              One bundle. 21 complete, ready-to-use codebases — SaaS, AI, eCommerce, POS, banking,
-              booking and more. Buy them separately and it costs over ₹20,000. Today you pay ₹199
-              once and download everything instantly.
+              Every source code is normally ₹2,499. In this bundle you pay ₹74.97 each — that is
+              20 × ₹74.97 = ₹1,499 total, plus 3 extra source codes added as a free bonus. 23
+              complete, ready-to-use codebases across SaaS, eCommerce, POS, fintech, marketing and
+              utility categories, delivered as one instant download.
             </p>
             <div className="fade-up mt-6 flex flex-col items-center gap-3 lg:items-start">
               <CountdownTimer label="Offer ends in" />
               <div className="flex items-end gap-3">
-                <span className="text-sm text-muted-foreground line-through">₹20,000</span>
+                <span className="text-sm text-muted-foreground line-through">₹49,980</span>
                 <span className="font-display text-3xl font-extrabold text-foreground">{PRICE}</span>
-                <span className="mb-1 rounded-md bg-accent/10 px-2 py-1 text-xs font-bold text-accent">99% off</span>
+                <span className="mb-1 rounded-md bg-accent/10 px-2 py-1 text-xs font-bold text-accent">97% off</span>
               </div>
               <BuyButton
                 label="Buy Now — Only 3 Slots Left"
@@ -206,7 +209,7 @@ function LandingPage() {
               </p>
             </div>
             <div className="fade-up mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground lg:justify-start">
-              <span>21 projects</span>
+              <span>23 projects</span>
               <span>10+ categories</span>
               <span>instant download</span>
               <span>no subscription</span>
@@ -246,11 +249,12 @@ function LandingPage() {
         <div className="mb-10 max-w-2xl">
           <Eyebrow>Step 1 — What you get</Eyebrow>
           <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-            21 Premium Source Codes — Worth ₹20,000+
+            23 Premium Source Codes — ₹2,499 Each, Now ₹74.97
           </h2>
           <p className="mt-3 text-muted-foreground">
             Every project included in the bundle, across 10+ development categories. Each one
-            would cost ₹1,000+ on its own — you get all 21 for a single ₹199 payment.
+            costs ₹2,499 individually — here it works out to ₹74.97 per source code, ₹1,499 for
+            the whole bundle (20 paid + 3 bonus).
           </p>
           {PRODUCTS.some((p) => getDemoUrl(p)) && (
             <p className="mt-2 flex items-center gap-1.5 text-sm text-primary">
@@ -259,7 +263,39 @@ function LandingPage() {
             </p>
           )}
         </div>
+
+        {/* Price breakdown */}
+        <div className="mb-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
+          {[
+            { k: "Price per source code", v: "₹2,499", s: "Normal individual price" },
+            { k: "Your price per code", v: "₹74.97", s: "97% off every script" },
+            { k: "20 × ₹74.97", v: "₹1,499", s: "Total you pay, one time" },
+            { k: "Bonus source codes", v: "3 Free", s: "Added at no extra cost" },
+          ].map((c) => (
+            <div key={c.k} className="bg-card p-5">
+              <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                {c.k}
+              </p>
+              <p className="mt-2 font-display text-2xl font-extrabold text-foreground">{c.v}</p>
+              <p className="mt-1 text-xs text-muted-foreground">{c.s}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Category chips */}
+        <div className="mb-8 flex flex-wrap gap-2">
+          {PRODUCT_GROUPS.map((g) => (
+            <span
+              key={g}
+              className="rounded-full border border-border bg-secondary px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground"
+            >
+              {g}
+            </span>
+          ))}
+        </div>
+
         <ProductGrid />
+
       </section>
 
       {/* REVIEWS */}
@@ -342,7 +378,7 @@ function LandingPage() {
               {
                 icon: CreditCard,
                 step: "01",
-                title: "Pay ₹199 securely",
+                title: "Pay ₹1,499 securely",
                 body: "Checkout runs on Razorpay — UPI, cards, netbanking and wallets all supported.",
               },
               {
@@ -377,7 +413,7 @@ function LandingPage() {
       <section className="mx-auto max-w-4xl px-5 py-16 sm:py-24">
         <Eyebrow>The maths</Eyebrow>
         <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-          ₹20,000+ Worth of Code. Just ₹199 Today.
+          23 Source Codes. ₹74.97 Each. ₹1,499 Total.
         </h2>
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           <div className="rounded-2xl border border-border bg-card/40 p-6">
@@ -404,7 +440,7 @@ function LandingPage() {
             </p>
             <ul className="mt-4 space-y-3 text-sm">
               {[
-                "All 21 projects in one download",
+                "All 23 projects in one download",
                 "One checkout, one payment",
                 "Ready-made codebases to start from",
                 "No subscription, no renewals",
@@ -487,16 +523,16 @@ function LandingPage() {
                 Step 4 — Get instant access
               </p>
               <div className="mt-3 flex items-center justify-center gap-3">
-                <span className="text-lg text-muted-foreground line-through">₹20,000</span>
+                <span className="text-lg text-muted-foreground line-through">₹49,980</span>
                 <span className="font-display text-6xl font-extrabold gradient-text">{PRICE}</span>
-                <span className="rounded-md bg-accent/10 px-2 py-1 text-xs font-bold text-accent">99% off</span>
+                <span className="rounded-md bg-accent/10 px-2 py-1 text-xs font-bold text-accent">97% off</span>
               </div>
               <p className="mt-1 text-sm text-muted-foreground">One-Time Payment — No Hidden Charges</p>
             </div>
             <div className="p-8">
               <ul className="space-y-3 text-sm">
                 {[
-                  "21 Source Code Projects",
+                  "20 Source Codes + 3 Bonus",
                   "Multiple Categories",
                   "Download Access",
                   "Documentation where provided",
@@ -598,16 +634,16 @@ function LandingPage() {
       {/* FINAL CTA */}
       <section className="hero-glow border-t border-border">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:py-24">
-          <h2 className="text-3xl font-bold sm:text-4xl">₹20,000+ Worth of Code for ₹199</h2>
+          <h2 className="text-3xl font-bold sm:text-4xl">₹49,980 Worth of Code for ₹1,499</h2>
           <p className="mt-3 text-muted-foreground">
-            21 premium source-code projects, one payment of {PRICE}, delivered as an instant
+            23 premium source-code projects, one payment of {PRICE}, delivered as an instant
             download after checkout.
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
-            <span className="text-lg text-muted-foreground line-through">₹20,000</span>
+            <span className="text-lg text-muted-foreground line-through">₹49,980</span>
             <span className="font-display text-4xl font-extrabold gradient-text">{PRICE} One-Time</span>
           </div>
-          <BuyButton label={`Download All 21 Projects — ${PRICE}`} className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
+          <BuyButton label={`Download All 23 Projects — ${PRICE}`} className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
         </div>
       </section>
 

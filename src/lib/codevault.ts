@@ -17,7 +17,15 @@ export const SUPPORT_EMAIL = "tajamulahmadnajar@gmail.com";
 export const META_PIXEL_ID = "2104861433763990";
 export const GOOGLE_ANALYTICS_ID = "G-6D5BJBFZ6D";
 
-export const PRICE = "₹199";
+export const PRICE = "₹1,499";
+/** Per-source-code pricing used across the page. */
+export const PER_ITEM_ORIGINAL = "₹2,499";
+export const PER_ITEM_SALE = "₹74.97";
+export const DISCOUNT_LABEL = "97% off";
+/** 20 paid source codes at ₹74.97 each = ₹1,499 (rounded). */
+export const PAID_ITEM_COUNT = 20;
+export const BONUS_ITEM_COUNT = 3;
+export const PRICE_ORIGINAL = "₹49,980";
 
 
 import neorousImg from "@/assets/products/neorous.jpg";
@@ -71,24 +79,24 @@ export function getDemoUrl(p: Product): string | null {
 
 export const PRODUCTS: Product[] = [
   { id: 1, name: "Ride Booking System", category: "Ride Sharing / Taxi", description: "Ride booking and driver management app codebase.", icon: "Car", demoUrl: "DEMO_URL_HERE", image: readyrideImg },
-  { id: 2, name: "Restaurant Management Script", category: "Restaurant / POS", description: "Restaurant point-of-sale and order management system.", icon: "UtensilsCrossed", demoUrl: "DEMO_URL_HERE", image: restroproImg },
+  { id: 2, name: "Restaurant Management Script", category: "Restaurant / POS", description: "Restaurant point-of-sale and order management system.", icon: "UtensilsCrossed", demoUrl: "https://restroprosaas.uiflow.in/", image: restroproImg },
   { id: 3, name: "Digital Products Selling Script", category: "Digital Products / Subscriptions", description: "Sell digital downloads and manage subscriptions.", icon: "CreditCard", demoUrl: "DEMO_URL_HERE", image: chargepandaImg },
   { id: 4, name: "Bio Link & URL Tools Script", category: "Bio Links / URL Shortener", description: "Bio pages, short links, QR codes and web tools.", icon: "Link2", demoUrl: "DEMO_URL_HERE", image: biolinks66Img },
   { id: 5, name: "SMS & WhatsApp Messaging Script", category: "SMS / WhatsApp SaaS", description: "Messaging gateway platform for SMS and WhatsApp.", icon: "MessageSquare", demoUrl: "DEMO_URL_HERE", image: zenderImg },
   { id: 6, name: "Portfolio & Blog Script", category: "Portfolio / Blog", description: "Clean personal portfolio and blogging platform.", icon: "PenLine", demoUrl: "DEMO_URL_HERE", image: blancoImg },
-  { id: 7, name: "Invoice & Billing Script", category: "Invoice / Payments", description: "Invoicing, billing and payment tracking system.", icon: "ReceiptText", demoUrl: "DEMO_URL_HERE", image: invoixproImg },
+  { id: 7, name: "Invoice & Billing Script", category: "Invoice / Payments", description: "Invoicing, billing and payment tracking system.", icon: "ReceiptText", demoUrl: "https://invoixpro1.stackful.dev/login", image: invoixproImg },
   { id: 8, name: "Push Notification Script", category: "Web Push Notifications", description: "Push notification campaigns and subscriber management.", icon: "BellRing", demoUrl: "DEMO_URL_HERE", image: pusher66Img },
   { id: 9, name: "Trading & Investment Script", category: "HYIP / Trading", description: "Investment, forex, stock and crypto trading platform.", icon: "TrendingUp", demoUrl: "DEMO_URL_HERE", image: lozandImg },
   { id: 10, name: "SaaS & Agency Website Script", category: "SaaS / Digital Agency", description: "Modern SaaS and agency website codebase.", icon: "Layers", demoUrl: "DEMO_URL_HERE", image: neorousImg },
   { id: 11, name: "eCommerce Store Script", category: "Fashion eCommerce", description: "Fashion storefront with cart and checkout flows.", icon: "ShoppingBag", demoUrl: "DEMO_URL_HERE", image: ecomusImg },
   { id: 12, name: "Cloud Storage Script", category: "File Sharing / Cloud Storage", description: "Cloud drive with sharing, folders and previews.", icon: "CloudUpload", demoUrl: "DEMO_URL_HERE", image: bedriveImg },
-  { id: 13, name: "Support Ticket Script", category: "Support / Ticketing", description: "Helpdesk ticketing and knowledge base system.", icon: "LifeBuoy", demoUrl: "DEMO_URL_HERE", image: fowticketsImg },
+  { id: 13, name: "Support Ticket Script", category: "Support / Ticketing", description: "Helpdesk ticketing and knowledge base system.", icon: "LifeBuoy", demoUrl: "https://demo.vironeer.com/fowtickets/", image: fowticketsImg },
   { id: 14, name: "Banking Management Script", category: "Digital Banking", description: "Online banking with accounts, transfers and ledgers.", icon: "Landmark", demoUrl: "DEMO_URL_HERE", image: viserbankImg },
   { id: 15, name: "Ads & Buy-Sell Script", category: "Ad Network / Marketing", description: "Advertising network and campaign management.", icon: "Megaphone", demoUrl: "DEMO_URL_HERE", image: adsrockImg },
   { id: 16, name: "Crypto Mining Script", category: "Cloud Crypto Mining", description: "Cloud mining plans, wallets and payout logic.", icon: "Pickaxe", demoUrl: "DEMO_URL_HERE", image: minelabImg },
   { id: 17, name: "Betting Management Script", category: "Sports Betting", description: "Sports betting platform with markets and slips.", icon: "Trophy", demoUrl: "DEMO_URL_HERE", image: betlabImg },
   { id: 18, name: "QR Code Generator Script", category: "AI QR / Barcode Tools", description: "QR/barcode generator with URL shortening tools.", icon: "QrCode", demoUrl: "DEMO_URL_HERE", image: qrcode66Img },
-  { id: 19, name: "Inventory & POS Script", category: "POS / Inventory / HRM", description: "Inventory, sales and staff management suite.", icon: "Boxes", demoUrl: "DEMO_URL_HERE", image: stockyImg },
+  { id: 19, name: "Inventory & POS Script", category: "POS / Inventory / HRM", description: "Inventory, sales and staff management suite.", icon: "Boxes", demoUrl: "https://demo.getstocky.com/login", image: stockyImg },
   { id: 20, name: "Appointment Booking Script", category: "Appointment Booking", description: "Bookings, calendars and service scheduling.", icon: "CalendarCheck", demoUrl: "DEMO_URL_HERE", image: ameliaImg },
   { id: 21, name: "Real Estate Listing Script", category: "Real Estate / Laravel", description: "Property listings, agents and enquiry management.", icon: "Home", demoUrl: "DEMO_URL_HERE", image: homzenImg },
 ];
