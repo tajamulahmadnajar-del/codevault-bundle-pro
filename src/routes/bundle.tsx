@@ -173,6 +173,29 @@ function BuyButton({ label, className = "" }: { label: string; className?: strin
   );
 }
 
+function TrustBar({ className = "" }: { className?: string }) {
+  return (
+    <div className={`flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground ${className}`}>
+      <span className="flex items-center gap-1.5">
+        <ShieldCheck className="h-3.5 w-3.5 text-primary" />
+        7-day refund guarantee
+      </span>
+      <span className="flex items-center gap-1.5">
+        <Lock className="h-3.5 w-3.5 text-primary" />
+        Secure Razorpay checkout
+      </span>
+      <span className="flex items-center gap-1.5">
+        <Download className="h-3.5 w-3.5 text-primary" />
+        Instant download
+      </span>
+      <span className="flex items-center gap-1.5">
+        <Mail className="h-3.5 w-3.5 text-primary" />
+        Email support
+      </span>
+    </div>
+  );
+}
+
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">{children}</p>
