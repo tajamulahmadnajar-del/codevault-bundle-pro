@@ -514,23 +514,22 @@ function LandingPage() {
           <div className="surface-card overflow-hidden p-0">
             <div className="border-b border-border bg-secondary/40 px-8 py-6 text-center">
               <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                Step 4 — Get instant access
+                One-time payment
               </p>
               <div className="mt-3 flex items-center justify-center gap-3">
                 <span className="text-lg text-muted-foreground line-through">₹49,980</span>
                 <span className="font-display text-6xl font-extrabold gradient-text">{PRICE}</span>
-                <span className="rounded-md bg-accent/10 px-2 py-1 text-xs font-bold text-accent">97% off</span>
               </div>
-              <p className="mt-1 text-sm text-muted-foreground">One-Time Payment — No Hidden Charges</p>
+              <p className="mt-1 text-sm text-muted-foreground">No subscription. No hidden charges.</p>
             </div>
             <div className="p-8">
               <ul className="space-y-3 text-sm">
                 {[
-                  "20 Source Codes + 3 Bonus",
-                  "Multiple Categories",
-                  "Download Access",
+                  "23 source-code projects",
+                  "Instant download after payment",
+                  "Use for learning or client work",
                   "Documentation where provided",
-                  "No Monthly Subscription",
+                  "7-day refund guarantee",
                 ].map((b) => (
                   <li key={b} className="flex items-center gap-3">
                     <Check className="h-4 w-4 shrink-0 text-primary" />
@@ -538,13 +537,8 @@ function LandingPage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 flex justify-center">
-                <CountdownTimer label="Offer ends in" />
-              </div>
-              <BuyButton label="Buy Now — Only 3 Slots Left" className="mt-4 w-full px-6 py-4 text-base" />
-              <p className="mt-3 text-center text-xs text-muted-foreground">
-                Secure payment • Instant access after successful payment
-              </p>
+              <BuyButton label="Get Instant Access" className="mt-6 w-full px-6 py-4 text-base" />
+              <TrustBar className="mt-4 justify-center" />
             </div>
           </div>
         </div>
