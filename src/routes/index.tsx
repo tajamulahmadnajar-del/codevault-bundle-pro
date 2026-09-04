@@ -265,12 +265,11 @@ function LandingPage() {
         <div className="mb-10 max-w-2xl">
           <Eyebrow>Step 1 — What you get</Eyebrow>
           <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-            23 Premium Source Codes — ₹2,499 Each, Now ₹74.97
+            23 Source-Code Projects in One Download
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Every project included in the bundle, across 10+ development categories. Each one
-            costs ₹2,499 individually — here it works out to ₹74.97 per source code, ₹1,499 for
-            the whole bundle (20 paid + 3 bonus).
+            Every project included in the bundle, across 10+ development categories. Explore the
+            live demos and the full list below.
           </p>
           {PRODUCTS.some((p) => getDemoUrl(p)) && (
             <p className="mt-2 flex items-center gap-1.5 text-sm text-primary">
@@ -278,24 +277,6 @@ function LandingPage() {
               Each card links to its live demo — explore before you buy.
             </p>
           )}
-        </div>
-
-        {/* Price breakdown */}
-        <div className="mb-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
-          {[
-            { k: "Price per source code", v: "₹2,499", s: "Normal individual price" },
-            { k: "Your price per code", v: "₹74.97", s: "97% off every script" },
-            { k: "20 × ₹74.97", v: "₹1,499", s: "Total you pay, one time" },
-            { k: "Bonus source codes", v: "3 Free", s: "Added at no extra cost" },
-          ].map((c) => (
-            <div key={c.k} className="bg-card p-5">
-              <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                {c.k}
-              </p>
-              <p className="mt-2 font-display text-2xl font-extrabold text-foreground">{c.v}</p>
-              <p className="mt-1 text-xs text-muted-foreground">{c.s}</p>
-            </div>
-          ))}
         </div>
 
         {/* Category chips */}
