@@ -226,7 +226,7 @@ function BundlePage() {
             <a href="#pricing" className="hidden text-sm font-medium text-muted-foreground transition-colors hover:text-foreground sm:block">
               Pricing
             </a>
-            <BuyButton label={`Buy Now — ${BUNDLE_PRICE}`} className="px-3.5 py-2 text-xs sm:text-sm" />
+            <BuyButton label={`Get Access — ${BUNDLE_PRICE}`} className="px-3.5 py-2 text-xs sm:text-sm" />
           </div>
         </div>
       </header>
