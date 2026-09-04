@@ -1,5 +1,5 @@
 import * as Icons from "lucide-react";
-import { getDemoUrl, getGroupedProducts, type Product } from "@/lib/codevault";
+import { getDemoUrl, getGroupedProducts, PER_ITEM_ORIGINAL, PER_ITEM_SALE, type Product } from "@/lib/codevault";
 
 function Icon({ name }: { name: string }) {
   const Cmp =
@@ -69,6 +69,13 @@ function ProductCard({ p }: { p: Product }) {
             <p className="mt-3 flex-1 text-[13px] leading-relaxed text-muted-foreground">
               {p.description}
             </p>
+            <div className="mt-3 flex items-center gap-2">
+              <span className="text-xs text-muted-foreground line-through">{PER_ITEM_ORIGINAL}</span>
+              <span className="text-sm font-bold text-foreground">{PER_ITEM_SALE}</span>
+              <span className="rounded bg-accent/10 px-1.5 py-0.5 text-[10px] font-bold text-accent">
+                97% off
+              </span>
+            </div>
             {demoUrl && (
               <a
                 href={demoUrl}
