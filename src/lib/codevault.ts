@@ -17,15 +17,15 @@ export const SUPPORT_EMAIL = "tajamulahmadnajar@gmail.com";
 export const META_PIXEL_ID = "2104861433763990";
 export const GOOGLE_ANALYTICS_ID = "G-6D5BJBFZ6D";
 
-export const PRICE = "₹1,499";
+export const PRICE = "₹999";
 /** Per-source-code pricing used across the page. */
 export const PER_ITEM_ORIGINAL = "₹2,499";
-export const PER_ITEM_SALE = "₹74.97";
-export const DISCOUNT_LABEL = "97% off";
-/** 20 paid source codes at ₹74.97 each = ₹1,499 (rounded). */
+export const PER_ITEM_SALE = "₹49.95";
+export const DISCOUNT_LABEL = "98% off";
+/** 20 paid source codes at ₹49.95 each = ₹999 (rounded). */
 export const PAID_ITEM_COUNT = 20;
 export const BONUS_ITEM_COUNT = 3;
-export const PRICE_ORIGINAL = "₹49,980";
+export const PRICE_ORIGINAL = "₹49,950";
 
 
 import neorousImg from "@/assets/products/neorous.jpg";
