@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ProductGrid } from "@/components/ProductGrid";
+import { Reviews } from "@/components/Reviews";
 import { Analytics } from "@/components/analytics";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { PurchaseNotifications } from "@/components/PurchaseNotifications";
@@ -259,6 +260,22 @@ function LandingPage() {
           )}
         </div>
         <ProductGrid />
+      </section>
+
+      {/* REVIEWS */}
+      <section className="border-y border-border bg-card/30">
+        <div className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+          <div className="mb-10 max-w-2xl">
+            <Eyebrow>Buyer feedback</Eyebrow>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+              What Buyers Are Saying
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              Feedback from developers, students and business owners who picked up the bundle.
+            </p>
+          </div>
+          <Reviews />
+        </div>
       </section>
 
       {/* VALUE */}

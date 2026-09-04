@@ -92,3 +92,51 @@ export const PRODUCTS: Product[] = [
   { id: 20, name: "Appointment Booking Script", category: "Appointment Booking", description: "Bookings, calendars and service scheduling.", icon: "CalendarCheck", demoUrl: "DEMO_URL_HERE", image: ameliaImg },
   { id: 21, name: "Real Estate Listing Script", category: "Real Estate / Laravel", description: "Property listings, agents and enquiry management.", icon: "Home", demoUrl: "DEMO_URL_HERE", image: homzenImg },
 ];
+
+/** Broad category groups used to organise the product grid on the homepage. */
+export const PRODUCT_GROUPS = [
+  "Business & Operations",
+  "eCommerce & Selling",
+  "Finance & Fintech",
+  "Marketing & Growth",
+  "Websites & SaaS",
+  "Tools & Utilities",
+] as const;
+
+export type ProductGroup = (typeof PRODUCT_GROUPS)[number];
+
+const GROUP_BY_ID: Record<number, ProductGroup> = {
+  1: "Business & Operations",
+  2: "Business & Operations",
+  13: "Business & Operations",
+  19: "Business & Operations",
+  20: "Business & Operations",
+  3: "eCommerce & Selling",
+  11: "eCommerce & Selling",
+  7: "Finance & Fintech",
+  9: "Finance & Fintech",
+  14: "Finance & Fintech",
+  16: "Finance & Fintech",
+  17: "Finance & Fintech",
+  4: "Marketing & Growth",
+  5: "Marketing & Growth",
+  8: "Marketing & Growth",
+  15: "Marketing & Growth",
+  6: "Websites & SaaS",
+  10: "Websites & SaaS",
+  21: "Websites & SaaS",
+  12: "Tools & Utilities",
+  18: "Tools & Utilities",
+};
+
+export function getGroup(p: Product): ProductGroup {
+  return GROUP_BY_ID[p.id] ?? "Tools & Utilities";
+}
+
+/** Products bucketed by group, preserving the order of PRODUCT_GROUPS. */
+export function getGroupedProducts(): { group: ProductGroup; items: Product[] }[] {
+  return PRODUCT_GROUPS.map((group) => ({
+    group,
+    items: PRODUCTS.filter((p) => getGroup(p) === group),
+  })).filter((g) => g.items.length > 0);
+}

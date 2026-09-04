@@ -1,5 +1,5 @@
 import * as Icons from "lucide-react";
-import { PRODUCTS, getDemoUrl } from "@/lib/codevault";
+import { getDemoUrl, getGroupedProducts, type Product } from "@/lib/codevault";
 
 function Icon({ name }: { name: string }) {
   const Cmp =
@@ -9,9 +9,29 @@ function Icon({ name }: { name: string }) {
 }
 
 export function ProductGrid() {
+  const groups = getGroupedProducts();
   return (
-    <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-      {PRODUCTS.map((p) => {
+    <div className="space-y-10">
+      {groups.map(({ group, items }) => (
+        <div key={group}>
+          <div className="mb-4 flex items-center gap-3">
+            <h3 className="text-lg font-bold tracking-tight sm:text-xl">{group}</h3>
+            <span className="rounded-full border border-border bg-secondary px-2.5 py-0.5 font-mono text-[11px] text-muted-foreground">
+              {items.length} {items.length === 1 ? "script" : "scripts"}
+            </span>
+          </div>
+          <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+            {items.map((p) => {
+              return <ProductCard key={p.id} p={p} />;
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function ProductCard({ p }: { p: Product }) {
         const demoUrl = getDemoUrl(p);
         return (
           <article
@@ -61,9 +81,6 @@ export function ProductGrid() {
                 Live Demo
               </a>
             )}
-          </article>
-        );
-      })}
-    </div>
+    </article>
   );
 }
