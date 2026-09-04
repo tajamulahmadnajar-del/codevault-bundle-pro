@@ -406,49 +406,46 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* VALUE STACK */}
-      <section className="mx-auto max-w-4xl px-5 py-16 sm:py-24">
-        <Eyebrow>The maths</Eyebrow>
-        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-          23 Source Codes. ₹74.97 Each. ₹1,499 Total.
-        </h2>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-card/40 p-6">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-              Buying separately
-            </p>
-            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-              {[
-                "Hunting for 21 different scripts",
-                "Separate checkouts and accounts",
-                "Weeks of building from scratch",
-                "Recurring subscriptions stacking up",
-              ].map((t) => (
-                <li key={t} className="flex items-start gap-3">
-                  <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive/80" />
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="surface-card p-6">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
-              CodeVault 21 — {PRICE}
-            </p>
-            <ul className="mt-4 space-y-3 text-sm">
-              {[
-                "All 23 projects in one download",
-                "One checkout, one payment",
-                "Ready-made codebases to start from",
-                "No subscription, no renewals",
-              ].map((t) => (
-                <li key={t} className="flex items-start gap-3">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </div>
+      {/* TRUST SIGNALS */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+        <div className="mb-10 max-w-2xl">
+          <Eyebrow>Why you can trust this</Eyebrow>
+          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Built for a safe, simple purchase</h2>
+          <p className="mt-3 text-muted-foreground">
+            No tricks, no hidden subscriptions. You get what you see — and we are here if you need help.
+          </p>
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              icon: Lock,
+              title: "Secure checkout",
+              body: "Payments are processed by Razorpay with UPI, cards, netbanking and wallets.",
+            },
+            {
+              icon: Download,
+              title: "Instant download",
+              body: "Access your files immediately after a successful payment — no waiting.",
+            },
+            {
+              icon: ShieldCheck,
+              title: "7-day refund",
+              body: "If the files don't match what's described, contact us within 7 days for a resolution or refund.",
+            },
+            {
+              icon: Mail,
+              title: "Real support",
+              body: `Questions? Email us at ${SUPPORT_EMAIL} — we reply to every customer message.`,
+            },
+          ].map(({ icon: I, title, body }) => (
+            <div key={title} className="surface-card p-6">
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background">
+                <I className="h-5 w-5 text-primary" />
+              </span>
+              <h3 className="mt-4 text-lg font-semibold">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
+            </div>
+          ))}
         </div>
       </section>
 
