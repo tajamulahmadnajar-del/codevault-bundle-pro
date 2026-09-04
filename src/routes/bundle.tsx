@@ -17,6 +17,7 @@ import {
   CalendarCheck,
   Check,
   Code2,
+  Download,
   ExternalLink,
   FileCode2,
   Layers,
