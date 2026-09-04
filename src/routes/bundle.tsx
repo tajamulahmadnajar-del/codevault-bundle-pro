@@ -422,14 +422,14 @@ function BundlePage() {
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             <div className="rounded-2xl border border-border bg-card/40 p-6">
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-                Building separately
+                Building from scratch
               </p>
               <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
                 {[
-                  "4 separate development projects",
-                  "Weeks of design, coding and testing",
-                  "Estimated ₹15,000–₹20,000+ in dev cost",
-                  "Debugging and maintenance on you",
+                  "Hire developers or build each tool yourself",
+                  "Months of design, coding and testing",
+                  "Separate hosting, payment and maintenance setup",
+                  "No guarantee of delivery timelines",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-3">
                     <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive/80" />
@@ -447,7 +447,7 @@ function BundlePage() {
                   "All 4 tools in one download",
                   "Ready to deploy and customise",
                   "One checkout, one payment",
-                  "Commercial use license included",
+                  "Use for your business or client work",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-3">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
