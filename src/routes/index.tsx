@@ -261,7 +261,39 @@ function LandingPage() {
             </p>
           )}
         </div>
+
+        {/* Price breakdown */}
+        <div className="mb-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
+          {[
+            { k: "Price per source code", v: "₹2,499", s: "Normal individual price" },
+            { k: "Your price per code", v: "₹74.97", s: "97% off every script" },
+            { k: "20 × ₹74.97", v: "₹1,499", s: "Total you pay, one time" },
+            { k: "Bonus source codes", v: "3 Free", s: "Added at no extra cost" },
+          ].map((c) => (
+            <div key={c.k} className="bg-card p-5">
+              <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                {c.k}
+              </p>
+              <p className="mt-2 font-display text-2xl font-extrabold text-foreground">{c.v}</p>
+              <p className="mt-1 text-xs text-muted-foreground">{c.s}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Category chips */}
+        <div className="mb-8 flex flex-wrap gap-2">
+          {PRODUCT_GROUPS.map((g) => (
+            <span
+              key={g}
+              className="rounded-full border border-border bg-secondary px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground"
+            >
+              {g}
+            </span>
+          ))}
+        </div>
+
         <ProductGrid />
+
       </section>
 
       {/* REVIEWS */}
