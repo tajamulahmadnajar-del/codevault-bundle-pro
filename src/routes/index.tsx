@@ -622,16 +622,16 @@ function LandingPage() {
       {/* FINAL CTA */}
       <section className="hero-glow border-t border-border">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:py-24">
-          <h2 className="text-3xl font-bold sm:text-4xl">₹49,980 Worth of Code for ₹1,499</h2>
+          <h2 className="text-3xl font-bold sm:text-4xl">Get the complete source-code bundle</h2>
           <p className="mt-3 text-muted-foreground">
-            23 premium source-code projects, one payment of {PRICE}, delivered as an instant
-            download after checkout.
+            23 projects, one payment of {PRICE}, instant download after checkout.
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
             <span className="text-lg text-muted-foreground line-through">₹49,980</span>
-            <span className="font-display text-4xl font-extrabold gradient-text">{PRICE} One-Time</span>
+            <span className="font-display text-4xl font-extrabold gradient-text">{PRICE}</span>
           </div>
-          <BuyButton label={`Download All 23 Projects — ${PRICE}`} className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
+          <BuyButton label="Get Instant Access" className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
+          <TrustBar className="mt-4 justify-center" />
         </div>
       </section>
 
