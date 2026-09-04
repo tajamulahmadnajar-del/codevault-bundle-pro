@@ -560,9 +560,8 @@ function BundlePage() {
           <div className="mt-8 flex justify-center">
             <BuyButton label={`Get Instant Access — ${BUNDLE_PRICE}`} className="px-8 py-4 text-base" />
           </div>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-1.5 text-xs text-muted-foreground">
-            <CalendarCheck className="h-3.5 w-3.5" />
-            Instant access after successful payment
+          <div className="mt-6 flex justify-center">
+            <TrustBar className="justify-center" />
           </div>
         </div>
       </section>
