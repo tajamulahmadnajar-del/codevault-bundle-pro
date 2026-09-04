@@ -133,7 +133,7 @@ function ThankYouPage() {
           <div className="fade-up surface-card mx-auto mt-10 max-w-md p-8">
             <Package className="mx-auto h-8 w-8 text-primary" />
             <p className="mt-4 font-display text-xl font-bold tracking-tight">📦 CODEVAULT 21</p>
-            <p className="mt-1 text-sm text-muted-foreground">23 Premium Source Code Projects</p>
+            <p className="mt-1 text-sm text-muted-foreground">23 Source-Code Projects</p>
             <a
               href={DOWNLOAD_BUNDLE_DIRECT_LINK}
               target="_blank"

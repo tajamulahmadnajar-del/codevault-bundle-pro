@@ -12,8 +12,6 @@ import {
 import { ProductGrid } from "@/components/ProductGrid";
 import { Reviews } from "@/components/Reviews";
 import { Analytics } from "@/components/analytics";
-import { CountdownTimer } from "@/components/CountdownTimer";
-import { PurchaseNotifications } from "@/components/PurchaseNotifications";
 import {
   PRICE,
   PRODUCTS,
@@ -33,6 +31,7 @@ import {
   Info,
   Layers,
   Lock,
+  Mail,
   ShieldCheck,
   Sparkles,
   Terminal,
@@ -41,9 +40,9 @@ import {
   X,
 } from "lucide-react";
 
-const TITLE = "CodeVault 21 — 23 Premium Source Codes for ₹1,499 (97% Off)";
+const TITLE = "CodeVault 21 — 23 Source-Code Projects for ₹1,499";
 const DESCRIPTION =
-  "23 premium source-code projects — SaaS, AI, eCommerce, POS, banking & more. ₹2,499 each, now ₹74.97 per source code. Pay ₹1,499 once and download instantly from Vitcz Codes.";
+  "A downloadable collection of 23 source-code projects — SaaS, eCommerce, POS, fintech, marketing & more. Pay ₹1,499 once and download instantly from Vitcz Codes.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -130,6 +129,31 @@ function BuyButton({ label, className = "" }: { label: string; className?: strin
   );
 }
 
+function TrustBar({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={`flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground lg:justify-start ${className}`}
+    >
+      <span className="flex items-center gap-1.5">
+        <ShieldCheck className="h-3.5 w-3.5 text-primary" />
+        7-day refund guarantee
+      </span>
+      <span className="flex items-center gap-1.5">
+        <Lock className="h-3.5 w-3.5 text-primary" />
+        Secure Razorpay checkout
+      </span>
+      <span className="flex items-center gap-1.5">
+        <Download className="h-3.5 w-3.5 text-primary" />
+        Instant download
+      </span>
+      <span className="flex items-center gap-1.5">
+        <Mail className="h-3.5 w-3.5 text-primary" />
+        Email support
+      </span>
+    </div>
+  );
+}
+
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">{children}</p>
@@ -144,8 +168,6 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">
       <Analytics />
-
-      <PurchaseNotifications />
 
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
@@ -183,30 +205,24 @@ function LandingPage() {
               </span>
             </div>
             <h1 className="fade-up mt-6 text-[2.1rem] font-extrabold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
-              20 Premium Source Codes + 3 Free Bonus.
-              <span className="mt-2 block gradient-text">₹2,499 Each — Now Just ₹74.97 Per Source Code.</span>
+              23 Ready-to-Use Source Codes —
+              <span className="mt-2 block gradient-text">One Payment of ₹1,499. Yours Forever.</span>
             </h1>
             <p className="fade-up mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
-              Every source code is normally ₹2,499. In this bundle you pay ₹74.97 each — that is
-              20 × ₹74.97 = ₹1,499 total, plus 3 extra source codes added as a free bonus. 23
-              complete, ready-to-use codebases across SaaS, eCommerce, POS, fintech, marketing and
-              utility categories, delivered as one instant download.
+              A downloadable collection of 23 complete source-code projects across SaaS, eCommerce,
+              POS, fintech, marketing and utility categories. Pay once and download instantly.
             </p>
             <div className="fade-up mt-6 flex flex-col items-center gap-3 lg:items-start">
-              <CountdownTimer label="Offer ends in" />
               <div className="flex items-end gap-3">
                 <span className="text-sm text-muted-foreground line-through">₹49,980</span>
                 <span className="font-display text-3xl font-extrabold text-foreground">{PRICE}</span>
                 <span className="mb-1 rounded-md bg-accent/10 px-2 py-1 text-xs font-bold text-accent">97% off</span>
               </div>
               <BuyButton
-                label="Buy Now — Only 3 Slots Left"
+                label="Get Instant Access"
                 className="w-full max-w-sm px-6 py-4 text-[15px] lg:max-w-none lg:w-auto"
               />
-              <p className="flex items-center gap-2 text-xs text-muted-foreground">
-                <Lock className="h-3.5 w-3.5" />
-                Secure payment • Instant access after successful payment
-              </p>
+              <TrustBar />
             </div>
             <div className="fade-up mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground lg:justify-start">
               <span>23 projects</span>
@@ -249,12 +265,11 @@ function LandingPage() {
         <div className="mb-10 max-w-2xl">
           <Eyebrow>Step 1 — What you get</Eyebrow>
           <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-            23 Premium Source Codes — ₹2,499 Each, Now ₹74.97
+            23 Source-Code Projects in One Download
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Every project included in the bundle, across 10+ development categories. Each one
-            costs ₹2,499 individually — here it works out to ₹74.97 per source code, ₹1,499 for
-            the whole bundle (20 paid + 3 bonus).
+            Every project included in the bundle, across 10+ development categories. Explore the
+            live demos and the full list below.
           </p>
           {PRODUCTS.some((p) => getDemoUrl(p)) && (
             <p className="mt-2 flex items-center gap-1.5 text-sm text-primary">
@@ -262,24 +277,6 @@ function LandingPage() {
               Each card links to its live demo — explore before you buy.
             </p>
           )}
-        </div>
-
-        {/* Price breakdown */}
-        <div className="mb-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
-          {[
-            { k: "Price per source code", v: "₹2,499", s: "Normal individual price" },
-            { k: "Your price per code", v: "₹74.97", s: "97% off every script" },
-            { k: "20 × ₹74.97", v: "₹1,499", s: "Total you pay, one time" },
-            { k: "Bonus source codes", v: "3 Free", s: "Added at no extra cost" },
-          ].map((c) => (
-            <div key={c.k} className="bg-card p-5">
-              <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                {c.k}
-              </p>
-              <p className="mt-2 font-display text-2xl font-extrabold text-foreground">{c.v}</p>
-              <p className="mt-1 text-xs text-muted-foreground">{c.s}</p>
-            </div>
-          ))}
         </div>
 
         {/* Category chips */}
@@ -409,49 +406,46 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* VALUE STACK */}
-      <section className="mx-auto max-w-4xl px-5 py-16 sm:py-24">
-        <Eyebrow>The maths</Eyebrow>
-        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-          23 Source Codes. ₹74.97 Each. ₹1,499 Total.
-        </h2>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-card/40 p-6">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-              Buying separately
-            </p>
-            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-              {[
-                "Hunting for 21 different scripts",
-                "Separate checkouts and accounts",
-                "Weeks of building from scratch",
-                "Recurring subscriptions stacking up",
-              ].map((t) => (
-                <li key={t} className="flex items-start gap-3">
-                  <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive/80" />
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="surface-card p-6">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
-              CodeVault 21 — {PRICE}
-            </p>
-            <ul className="mt-4 space-y-3 text-sm">
-              {[
-                "All 23 projects in one download",
-                "One checkout, one payment",
-                "Ready-made codebases to start from",
-                "No subscription, no renewals",
-              ].map((t) => (
-                <li key={t} className="flex items-start gap-3">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </div>
+      {/* TRUST SIGNALS */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+        <div className="mb-10 max-w-2xl">
+          <Eyebrow>Why you can trust this</Eyebrow>
+          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Built for a safe, simple purchase</h2>
+          <p className="mt-3 text-muted-foreground">
+            No tricks, no hidden subscriptions. You get what you see — and we are here if you need help.
+          </p>
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              icon: Lock,
+              title: "Secure checkout",
+              body: "Payments are processed by Razorpay with UPI, cards, netbanking and wallets.",
+            },
+            {
+              icon: Download,
+              title: "Instant download",
+              body: "Access your files immediately after a successful payment — no waiting.",
+            },
+            {
+              icon: ShieldCheck,
+              title: "7-day refund",
+              body: "If the files don't match what's described, contact us within 7 days for a resolution or refund.",
+            },
+            {
+              icon: Mail,
+              title: "Real support",
+              body: `Questions? Email us at ${SUPPORT_EMAIL} — we reply to every customer message.`,
+            },
+          ].map(({ icon: I, title, body }) => (
+            <div key={title} className="surface-card p-6">
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background">
+                <I className="h-5 w-5 text-primary" />
+              </span>
+              <h3 className="mt-4 text-lg font-semibold">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -520,23 +514,22 @@ function LandingPage() {
           <div className="surface-card overflow-hidden p-0">
             <div className="border-b border-border bg-secondary/40 px-8 py-6 text-center">
               <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                Step 4 — Get instant access
+                One-time payment
               </p>
               <div className="mt-3 flex items-center justify-center gap-3">
                 <span className="text-lg text-muted-foreground line-through">₹49,980</span>
                 <span className="font-display text-6xl font-extrabold gradient-text">{PRICE}</span>
-                <span className="rounded-md bg-accent/10 px-2 py-1 text-xs font-bold text-accent">97% off</span>
               </div>
-              <p className="mt-1 text-sm text-muted-foreground">One-Time Payment — No Hidden Charges</p>
+              <p className="mt-1 text-sm text-muted-foreground">No subscription. No hidden charges.</p>
             </div>
             <div className="p-8">
               <ul className="space-y-3 text-sm">
                 {[
-                  "20 Source Codes + 3 Bonus",
-                  "Multiple Categories",
-                  "Download Access",
+                  "23 source-code projects",
+                  "Instant download after payment",
+                  "Use for learning or client work",
                   "Documentation where provided",
-                  "No Monthly Subscription",
+                  "7-day refund guarantee",
                 ].map((b) => (
                   <li key={b} className="flex items-center gap-3">
                     <Check className="h-4 w-4 shrink-0 text-primary" />
@@ -544,13 +537,8 @@ function LandingPage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 flex justify-center">
-                <CountdownTimer label="Offer ends in" />
-              </div>
-              <BuyButton label="Buy Now — Only 3 Slots Left" className="mt-4 w-full px-6 py-4 text-base" />
-              <p className="mt-3 text-center text-xs text-muted-foreground">
-                Secure payment • Instant access after successful payment
-              </p>
+              <BuyButton label="Get Instant Access" className="mt-6 w-full px-6 py-4 text-base" />
+              <TrustBar className="mt-4 justify-center" />
             </div>
           </div>
         </div>
@@ -634,16 +622,16 @@ function LandingPage() {
       {/* FINAL CTA */}
       <section className="hero-glow border-t border-border">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:py-24">
-          <h2 className="text-3xl font-bold sm:text-4xl">₹49,980 Worth of Code for ₹1,499</h2>
+          <h2 className="text-3xl font-bold sm:text-4xl">Get the complete source-code bundle</h2>
           <p className="mt-3 text-muted-foreground">
-            23 premium source-code projects, one payment of {PRICE}, delivered as an instant
-            download after checkout.
+            23 projects, one payment of {PRICE}, instant download after checkout.
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
             <span className="text-lg text-muted-foreground line-through">₹49,980</span>
-            <span className="font-display text-4xl font-extrabold gradient-text">{PRICE} One-Time</span>
+            <span className="font-display text-4xl font-extrabold gradient-text">{PRICE}</span>
           </div>
-          <BuyButton label={`Download All 23 Projects — ${PRICE}`} className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
+          <BuyButton label="Get Instant Access" className="mt-8 w-full max-w-sm px-6 py-4 text-base" />
+          <TrustBar className="mt-4 justify-center" />
         </div>
       </section>
 
@@ -676,7 +664,7 @@ function LandingPage() {
 
       {/* Sticky mobile buy bar */}
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 p-3 backdrop-blur md:hidden">
-        <BuyButton label={`Get the Bundle — ${PRICE}`} className="w-full px-6 py-3.5 text-sm" />
+        <BuyButton label={`Get Instant Access — ${PRICE}`} className="w-full px-6 py-3.5 text-sm" />
       </div>
     </div>
   );

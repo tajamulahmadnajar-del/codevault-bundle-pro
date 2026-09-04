@@ -17,6 +17,7 @@ import {
   CalendarCheck,
   Check,
   Code2,
+  Download,
   ExternalLink,
   FileCode2,
   Layers,
@@ -173,6 +174,29 @@ function BuyButton({ label, className = "" }: { label: string; className?: strin
   );
 }
 
+function TrustBar({ className = "" }: { className?: string }) {
+  return (
+    <div className={`flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground ${className}`}>
+      <span className="flex items-center gap-1.5">
+        <ShieldCheck className="h-3.5 w-3.5 text-primary" />
+        7-day refund guarantee
+      </span>
+      <span className="flex items-center gap-1.5">
+        <Lock className="h-3.5 w-3.5 text-primary" />
+        Secure Razorpay checkout
+      </span>
+      <span className="flex items-center gap-1.5">
+        <Download className="h-3.5 w-3.5 text-primary" />
+        Instant download
+      </span>
+      <span className="flex items-center gap-1.5">
+        <Mail className="h-3.5 w-3.5 text-primary" />
+        Email support
+      </span>
+    </div>
+  );
+}
+
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">{children}</p>
@@ -203,7 +227,7 @@ function BundlePage() {
             <a href="#pricing" className="hidden text-sm font-medium text-muted-foreground transition-colors hover:text-foreground sm:block">
               Pricing
             </a>
-            <BuyButton label={`Buy Now — ${BUNDLE_PRICE}`} className="px-3.5 py-2 text-xs sm:text-sm" />
+            <BuyButton label={`Get Access — ${BUNDLE_PRICE}`} className="px-3.5 py-2 text-xs sm:text-sm" />
           </div>
         </div>
       </header>
@@ -230,13 +254,10 @@ function BundlePage() {
               See Live Demo
               <ExternalLink className="h-4 w-4" />
             </a>
-            <BuyButton label={`Buy Now — ${BUNDLE_PRICE}`} className="w-full max-w-xs px-6 py-3.5 text-sm sm:w-auto" />
+            <BuyButton label={`Get Instant Access — ${BUNDLE_PRICE}`} className="w-full max-w-xs px-6 py-3.5 text-sm sm:w-auto" />
           </div>
-          <div className="fade-up mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground sm:text-sm">
-            <span className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-primary" /> Live Demo Available</span>
-            <span className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-primary" /> Instant Download</span>
-            <span className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-primary" /> Commercial License</span>
-            <span className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-primary" /> Secure Payment (Razorpay)</span>
+          <div className="fade-up mt-10 flex justify-center">
+            <TrustBar className="justify-center" />
           </div>
         </div>
       </section>
@@ -402,14 +423,14 @@ function BundlePage() {
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             <div className="rounded-2xl border border-border bg-card/40 p-6">
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-                Building separately
+                Building from scratch
               </p>
               <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
                 {[
-                  "4 separate development projects",
-                  "Weeks of design, coding and testing",
-                  "Estimated ₹15,000–₹20,000+ in dev cost",
-                  "Debugging and maintenance on you",
+                  "Hire developers or build each tool yourself",
+                  "Months of design, coding and testing",
+                  "Separate hosting, payment and maintenance setup",
+                  "No guarantee of delivery timelines",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-3">
                     <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive/80" />
@@ -427,7 +448,7 @@ function BundlePage() {
                   "All 4 tools in one download",
                   "Ready to deploy and customise",
                   "One checkout, one payment",
-                  "Commercial use license included",
+                  "Use for your business or client work",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-3">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
@@ -540,9 +561,8 @@ function BundlePage() {
           <div className="mt-8 flex justify-center">
             <BuyButton label={`Get Instant Access — ${BUNDLE_PRICE}`} className="px-8 py-4 text-base" />
           </div>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-1.5 text-xs text-muted-foreground">
-            <CalendarCheck className="h-3.5 w-3.5" />
-            Instant access after successful payment
+          <div className="mt-6 flex justify-center">
+            <TrustBar className="justify-center" />
           </div>
         </div>
       </section>
@@ -566,7 +586,7 @@ function BundlePage() {
 
       {/* Sticky mobile buy bar */}
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/90 px-4 py-3 backdrop-blur-xl md:hidden">
-        <BuyButton label={`Buy Now — ${BUNDLE_PRICE}`} className="w-full px-6 py-3 text-sm" />
+        <BuyButton label={`Get Instant Access — ${BUNDLE_PRICE}`} className="w-full px-6 py-3 text-sm" />
       </div>
     </div>
   );
