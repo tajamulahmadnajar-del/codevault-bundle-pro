@@ -36,13 +36,13 @@ export function fireGaEvent(name: string, params: Record<string, unknown> = {}):
 export function fireGaPurchase(transactionId: string): void {
   fireGaEvent("purchase", {
     transaction_id: transactionId,
-    value: 199,
+    value: 1499,
     currency: "INR",
     items: [
       {
         item_id: "codevault-21",
         item_name: "CodeVault 21",
-        price: 199,
+        price: 1499,
         quantity: 1,
       },
     ],
