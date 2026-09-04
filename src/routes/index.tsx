@@ -205,30 +205,24 @@ function LandingPage() {
               </span>
             </div>
             <h1 className="fade-up mt-6 text-[2.1rem] font-extrabold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
-              20 Premium Source Codes + 3 Free Bonus.
-              <span className="mt-2 block gradient-text">₹2,499 Each — Now Just ₹74.97 Per Source Code.</span>
+              23 Ready-to-Use Source Codes —
+              <span className="mt-2 block gradient-text">One Payment of ₹1,499. Yours Forever.</span>
             </h1>
             <p className="fade-up mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
-              Every source code is normally ₹2,499. In this bundle you pay ₹74.97 each — that is
-              20 × ₹74.97 = ₹1,499 total, plus 3 extra source codes added as a free bonus. 23
-              complete, ready-to-use codebases across SaaS, eCommerce, POS, fintech, marketing and
-              utility categories, delivered as one instant download.
+              A downloadable collection of 23 complete source-code projects across SaaS, eCommerce,
+              POS, fintech, marketing and utility categories. Pay once and download instantly.
             </p>
             <div className="fade-up mt-6 flex flex-col items-center gap-3 lg:items-start">
-              <CountdownTimer label="Offer ends in" />
               <div className="flex items-end gap-3">
                 <span className="text-sm text-muted-foreground line-through">₹49,980</span>
                 <span className="font-display text-3xl font-extrabold text-foreground">{PRICE}</span>
                 <span className="mb-1 rounded-md bg-accent/10 px-2 py-1 text-xs font-bold text-accent">97% off</span>
               </div>
               <BuyButton
-                label="Buy Now — Only 3 Slots Left"
+                label="Get Instant Access"
                 className="w-full max-w-sm px-6 py-4 text-[15px] lg:max-w-none lg:w-auto"
               />
-              <p className="flex items-center gap-2 text-xs text-muted-foreground">
-                <Lock className="h-3.5 w-3.5" />
-                Secure payment • Instant access after successful payment
-              </p>
+              <TrustBar />
             </div>
             <div className="fade-up mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground lg:justify-start">
               <span>23 projects</span>
