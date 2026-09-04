@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ProductGrid } from "@/components/ProductGrid";
+import { Reviews } from "@/components/Reviews";
 import { Analytics } from "@/components/analytics";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { PurchaseNotifications } from "@/components/PurchaseNotifications";
