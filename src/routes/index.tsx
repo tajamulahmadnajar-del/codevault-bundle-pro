@@ -143,8 +143,6 @@ function LandingPage() {
     <div className="min-h-screen bg-background pb-24 md:pb-0">
       <Analytics />
 
-      <PurchaseNotifications />
-
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
           <div className="flex items-center gap-2.5">
