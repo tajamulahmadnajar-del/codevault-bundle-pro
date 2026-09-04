@@ -253,13 +253,10 @@ function BundlePage() {
               See Live Demo
               <ExternalLink className="h-4 w-4" />
             </a>
-            <BuyButton label={`Buy Now — ${BUNDLE_PRICE}`} className="w-full max-w-xs px-6 py-3.5 text-sm sm:w-auto" />
+            <BuyButton label={`Get Instant Access — ${BUNDLE_PRICE}`} className="w-full max-w-xs px-6 py-3.5 text-sm sm:w-auto" />
           </div>
-          <div className="fade-up mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground sm:text-sm">
-            <span className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-primary" /> Live Demo Available</span>
-            <span className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-primary" /> Instant Download</span>
-            <span className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-primary" /> Commercial License</span>
-            <span className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-primary" /> Secure Payment (Razorpay)</span>
+          <div className="fade-up mt-10 flex justify-center">
+            <TrustBar className="justify-center" />
           </div>
         </div>
       </section>
