@@ -31,6 +31,7 @@ import {
   Info,
   Layers,
   Lock,
+  Mail,
   ShieldCheck,
   Sparkles,
   Terminal,
