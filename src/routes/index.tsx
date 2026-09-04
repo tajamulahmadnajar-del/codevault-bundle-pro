@@ -17,6 +17,8 @@ import { PurchaseNotifications } from "@/components/PurchaseNotifications";
 import {
   PRICE,
   PRODUCTS,
+  PRODUCT_GROUPS,
+
   RAZORPAY_PAYMENT_LINK,
   SUPPORT_EMAIL,
   getDemoUrl,
