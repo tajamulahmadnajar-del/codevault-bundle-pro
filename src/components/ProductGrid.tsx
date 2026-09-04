@@ -1,5 +1,5 @@
 import * as Icons from "lucide-react";
-import { getDemoUrl, getGroupedProducts } from "@/lib/codevault";
+import { getDemoUrl, getGroupedProducts, type Product } from "@/lib/codevault";
 
 function Icon({ name }: { name: string }) {
   const Cmp =
@@ -31,7 +31,7 @@ export function ProductGrid() {
   );
 }
 
-function ProductCard({ p }: { p: (typeof items)[number] extends never ? never : import("@/lib/codevault").Product }) {
+function ProductCard({ p }: { p: Product }) {
         const demoUrl = getDemoUrl(p);
         return (
           <article
@@ -81,9 +81,6 @@ function ProductCard({ p }: { p: (typeof items)[number] extends never ? never : 
                 Live Demo
               </a>
             )}
-          </article>
-        );
-      })}
-    </div>
+    </article>
   );
 }
