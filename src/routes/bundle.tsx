@@ -585,7 +585,7 @@ function BundlePage() {
 
       {/* Sticky mobile buy bar */}
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/90 px-4 py-3 backdrop-blur-xl md:hidden">
-        <BuyButton label={`Buy Now — ${BUNDLE_PRICE}`} className="w-full px-6 py-3 text-sm" />
+        <BuyButton label={`Get Instant Access — ${BUNDLE_PRICE}`} className="w-full px-6 py-3 text-sm" />
       </div>
     </div>
   );
